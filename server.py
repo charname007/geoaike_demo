@@ -20,6 +20,7 @@ from config import SERVER_CONFIG
 from loguru import logger
 from m_workflow import m_graph
 from pathlib import Path
+from fastapi.staticfiles import StaticFiles
 
 
 dir_log = "logs"
@@ -72,6 +73,9 @@ app = FastAPI(
     lifespan=lifespan
 )
 
+# 【关键步骤】将本地的 "static" 文件夹挂载到 URL 路径 "/static" 下
+app.mount("/images", StaticFiles(directory="images"), name="images")
+app.mount('/cache', StaticFiles(directory='cache'), name='cache')
 # 添加CORS中间件
 app.add_middleware(
     CORSMiddleware,
@@ -137,7 +141,7 @@ async def get_logs():
 @app.get('/Map_Page')
 async def get_map_page():
     """提供地图页面的端点"""
-    html_path = Path(__file__).parent.parent / 'front_page' / 'Map_page.html'
+    html_path = Path(__file__).parent / 'front_page' / 'Map_page.html'
     try:
         with open(html_path, 'r', encoding='utf-8') as f:
             html_content = f.read()

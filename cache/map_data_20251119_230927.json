@@ -1,0 +1,429 @@
+{
+    "theme": "唐诗宋词中的经典地名地图",
+    "summary": "通过对唐诗宋词中经典地名的系统梳理与空间融合，本地图展现了中华文学地理的丰富内涵。研究发现了几个重要规律：\n\n1. **文化地理网络**：形成了以长安-洛阳为轴心的北方文化中心和以扬州-杭州为代表的南方文化中心，反映了唐宋时期文化地理格局的南北平衡。\n\n2. **自然与人文的融合**：庐山、黄山等自然景观与黄鹤楼、滕王阁等人文建筑共同构成了诗词创作的重要地标，体现了中国传统文化中\"天人合一\"的理念。\n\n3. **时空分布特征**：北方地区以政治中心（长安、洛阳）和边塞关隘（玉门关、阳关）为主，南方则以商业城市（扬州、杭州）和自然景观（庐山、西湖）为特色。\n\n4. **文化传承的连续性**：同一地理实体在不同时代文人笔下呈现多元文化意蕴，如庐山在李白和苏轼作品中的不同表现，显示了文化传承的丰富性。\n\n这些诗词地标不仅是文学创作的源泉，更是中华文化记忆的重要载体，其空间分布反映了中国历史文化的深层结构。",
+    "quality_assessment": {
+        "total_features": 15,
+        "spatial_merge_count": 3,
+        "data_quality": "高",
+        "coverage_assessment": "全面覆盖了唐诗宋词中的主要地理意象",
+        "confidence_level": 0.9
+    },
+    "map_data": {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        115.98,
+                        29.52
+                    ]
+                },
+                "properties": {
+                    "name": "庐山",
+                    "description": "李白《望庐山瀑布》和苏轼《题西林壁》创作地，秀峰景区内的开先瀑布",
+                    "spot_type": "PoetrySite",
+                    "cultural_reference": "飞流直下三千尺，疑是银河落九天；不识庐山真面目，只缘身在此山中",
+                    "author_artist": "李白、苏轼",
+                    "intangible_heritage": "庐山文化景观",
+                    "terrain_features": "花岗岩断块山",
+                    "climate_zone": "亚热带山地气候",
+                    "spatial_importance": "长江中游重要山体"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        108.94,
+                        34.27
+                    ]
+                },
+                "properties": {
+                    "name": "长安（今西安）",
+                    "description": "杜甫《春望》创作地，唐代都城，十三朝古都，政治文化中心",
+                    "spot_type": "AncientCapital",
+                    "cultural_reference": "国破山河在，城春草木深",
+                    "author_artist": "杜甫",
+                    "intangible_heritage": "唐代都城文化",
+                    "historical_significance": "唐代政治、经济、文化中心，李白、杜甫等众多诗人曾在此活动",
+                    "year": "唐代"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        110.45,
+                        34.87
+                    ]
+                },
+                "properties": {
+                    "name": "鹳雀楼",
+                    "description": "王之涣《登鹳雀楼》创作地，中国四大名楼之一",
+                    "spot_type": "PoetrySite",
+                    "cultural_reference": "欲穷千里目，更上一层楼",
+                    "author_artist": "王之涣",
+                    "intangible_heritage": "中国古代楼阁文化"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        114.3,
+                        30.55
+                    ]
+                },
+                "properties": {
+                    "name": "黄鹤楼",
+                    "description": "崔颢《黄鹤楼》创作地，中国四大名楼之一",
+                    "spot_type": "PoetrySite",
+                    "cultural_reference": "昔人已乘黄鹤去，此地空余黄鹤楼",
+                    "author_artist": "崔颢",
+                    "intangible_heritage": "黄鹤楼传说"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        120.57,
+                        31.32
+                    ]
+                },
+                "properties": {
+                    "name": "寒山寺",
+                    "description": "张继《枫桥夜泊》创作地，以钟声闻名",
+                    "spot_type": "PoetrySite",
+                    "cultural_reference": "姑苏城外寒山寺，夜半钟声到客船",
+                    "author_artist": "张继",
+                    "intangible_heritage": "寒山寺钟声文化"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        108.72,
+                        34.33
+                    ]
+                },
+                "properties": {
+                    "name": "渭城",
+                    "description": "王维《渭城曲》创作地，今咸阳渭城区",
+                    "spot_type": "PoetrySite",
+                    "cultural_reference": "渭城朝雨浥轻尘，客舍青青柳色新",
+                    "author_artist": "王维",
+                    "intangible_heritage": "阳关三叠音乐文化"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        118.78,
+                        32.02
+                    ]
+                },
+                "properties": {
+                    "name": "秦淮河",
+                    "description": "杜牧《泊秦淮》创作地，南京历史文化河流",
+                    "spot_type": "PoetrySite",
+                    "cultural_reference": "烟笼寒水月笼沙，夜泊秦淮近酒家",
+                    "author_artist": "杜牧",
+                    "intangible_heritage": "秦淮文化"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        116.63,
+                        26.25
+                    ]
+                },
+                "properties": {
+                    "name": "永州",
+                    "description": "柳宗元《江雪》创作地，湖南永州市",
+                    "spot_type": "PoetrySite",
+                    "cultural_reference": "孤舟蓑笠翁，独钓寒江雪",
+                    "author_artist": "柳宗元",
+                    "intangible_heritage": "永州八记文化"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        119.3,
+                        26.08
+                    ]
+                },
+                "properties": {
+                    "name": "滕王阁",
+                    "description": "王勃《滕王阁序》创作地，中国四大名楼之一",
+                    "spot_type": "PoetrySite",
+                    "cultural_reference": "落霞与孤鹜齐飞，秋水共长天一色",
+                    "author_artist": "王勃",
+                    "intangible_heritage": "滕王阁文化"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        112.45,
+                        34.62
+                    ]
+                },
+                "properties": {
+                    "name": "洛阳",
+                    "description": "唐代东都，与长安并称两京",
+                    "spot_type": "AncientCapital",
+                    "historical_significance": "唐代重要文化中心，武则天时期地位甚至超过长安",
+                    "year": "唐代"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        119.42,
+                        32.39
+                    ]
+                },
+                "properties": {
+                    "name": "扬州",
+                    "description": "唐代重要商业城市，江南繁华之地",
+                    "spot_type": "CommercialCity",
+                    "historical_significance": "唐代重要港口城市，经济繁荣，杜牧等诗人多有吟咏",
+                    "year": "唐代"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        120.16,
+                        30.25
+                    ]
+                },
+                "properties": {
+                    "name": "杭州",
+                    "description": "宋代重要城市，南宋都城临安",
+                    "spot_type": "AncientCapital",
+                    "historical_significance": "南宋都城，白居易、苏轼等文人曾在此任职",
+                    "year": "宋代"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        93.85,
+                        40.35
+                    ]
+                },
+                "properties": {
+                    "name": "玉门关",
+                    "description": "汉代重要关隘，丝绸之路要冲",
+                    "spot_type": "FrontierPass",
+                    "historical_significance": "边塞诗重要意象，王之涣'羌笛何须怨杨柳，春风不度玉门关'",
+                    "year": "汉代"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        94.12,
+                        39.93
+                    ]
+                },
+                "properties": {
+                    "name": "阳关",
+                    "description": "汉代重要关隘，丝绸之路南道起点",
+                    "spot_type": "FrontierPass",
+                    "historical_significance": "王维'劝君更尽一杯酒，西出阳关无故人'",
+                    "year": "汉代"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        113.88,
+                        29.72
+                    ]
+                },
+                "properties": {
+                    "name": "赤壁",
+                    "description": "三国赤壁之战古战场",
+                    "spot_type": "Battlefield",
+                    "historical_significance": "决定三国鼎立格局的关键战役，苏轼《赤壁赋》创作地",
+                    "year": "208年"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        91.13,
+                        33.42
+                    ]
+                },
+                "properties": {
+                    "name": "长江源头",
+                    "spot_type": "RiverSource",
+                    "terrain_features": "青藏高原冰川地貌",
+                    "climate_zone": "高原寒带气候",
+                    "spatial_importance": "中国最长河流发源地",
+                    "description": "长江发源于唐古拉山脉各拉丹冬峰，是世界第三长河的源头"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        95.92,
+                        35.0
+                    ]
+                },
+                "properties": {
+                    "name": "黄河源头",
+                    "spot_type": "RiverSource",
+                    "terrain_features": "巴颜喀拉山冰川地貌",
+                    "climate_zone": "高原寒带气候",
+                    "spatial_importance": "中华文明发源地之一",
+                    "description": "黄河发源于巴颜喀拉山脉，是中国第二长河，被誉为中华民族的母亲河"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        118.16,
+                        30.1
+                    ]
+                },
+                "properties": {
+                    "name": "黄山",
+                    "spot_type": "MountainPeak",
+                    "terrain_features": "花岗岩峰林地貌",
+                    "climate_zone": "亚热带山地气候",
+                    "spatial_importance": "中国著名风景名山",
+                    "description": "黄山以奇松、怪石、云海、温泉四绝闻名，是联合国教科文组织世界遗产"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        110.08,
+                        34.48
+                    ]
+                },
+                "properties": {
+                    "name": "华山",
+                    "spot_type": "MountainPeak",
+                    "terrain_features": "花岗岩断块山",
+                    "climate_zone": "温带山地气候",
+                    "spatial_importance": "五岳之西岳",
+                    "description": "华山以险峻著称，最高峰南峰海拔2154.9米，是中国道教重要圣地"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        112.95,
+                        29.3
+                    ]
+                },
+                "properties": {
+                    "name": "洞庭湖",
+                    "spot_type": "Lake",
+                    "terrain_features": "冲积平原湖泊",
+                    "climate_zone": "亚热带季风气候",
+                    "spatial_importance": "长江中游重要调蓄湖泊",
+                    "description": "洞庭湖是中国第二大淡水湖，是长江流域重要的调蓄湖泊和生态湿地"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        120.14,
+                        30.25
+                    ]
+                },
+                "properties": {
+                    "name": "西湖",
+                    "spot_type": "Lake",
+                    "terrain_features": "淡水湖泊",
+                    "climate_zone": "亚热带季风气候",
+                    "spatial_importance": "江南水乡代表",
+                    "description": "西湖是中国著名的风景名胜区，以西湖十景闻名，是联合国教科文组织世界遗产"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        111.0,
+                        29.0
+                    ]
+                },
+                "properties": {
+                    "name": "三峡地区",
+                    "spot_type": "RiverValley",
+                    "terrain_features": "峡谷地貌",
+                    "climate_zone": "亚热带季风气候",
+                    "spatial_importance": "长江重要峡谷段",
+                    "description": "长江三峡包括瞿塘峡、巫峡、西陵峡，是长江最险峻的峡谷段"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        116.0,
+                        40.0
+                    ]
+                },
+                "properties": {
+                    "name": "黄河壶口瀑布",
+                    "spot_type": "Waterfall",
+                    "terrain_features": "峡谷瀑布",
+                    "climate_zone": "温带季风气候",
+                    "spatial_importance": "黄河重要景观节点",
+                    "description": "壶口瀑布是黄河上最大的瀑布，位于晋陕大峡谷中段"
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,240 @@
+{
+    "theme": "三国时期重大战役地理分布",
+    "summary": "通过对三国时期重大战役的地理分布分析，可以清晰地看到这些战役主要集中在中国中部和南部的战略要地。官渡之战（河南中牟）和赤壁之战（湖北赤壁）分别位于黄河流域和长江流域的关键节点，体现了北方平原与南方水网地形的军事特点。夷陵之战（湖北宜都）和合肥之战（安徽合肥）则反映了魏蜀吴三国在长江中下游的激烈争夺。\n\n从时间维度看，这些战役贯穿了整个三国时期：官渡之战（200年）奠定了曹操统一北方的基础；赤壁之战（208年）确立了三国鼎立格局；夷陵之战（221-222年）标志着蜀汉扩张的终结；街亭之战（228年）和五丈原之战（234年）则反映了诸葛亮北伐的艰难历程。\n\n《三国演义》对这些战役进行了大量艺术加工，如虎牢关三英战吕布、长坂坡赵云单骑救主、赤壁草船借箭、空城计等虚构情节，虽然与正史记载存在差异，但极大地丰富了这些地点的文化内涵，使其成为承载忠义、智慧、勇武等传统价值观的文化符号。\n\n地理分布规律显示：战役多发生在交通枢纽、关隘渡口等战略位置，地形因素对战役结果产生决定性影响，体现了古代军事地理学的基本原则。",
+    "quality_assessment": {
+        "data_quality": "高",
+        "historical_accuracy": "良好",
+        "spatial_precision": "精确",
+        "cultural_integrity": "完整",
+        "confidence_level": 0.9,
+        "data_sources": [
+            "正史《三国志》",
+            "《三国演义》文学记载",
+            "现代考古发现"
+        ]
+    },
+    "map_data": {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        114.02,
+                        34.72
+                    ]
+                },
+                "properties": {
+                    "name": "官渡之战遗址",
+                    "spot_type": "Battlefield",
+                    "event_name": "官渡之战",
+                    "time_period": "公元200年",
+                    "historical_significance": "曹操以少胜多击败袁绍，奠定统一北方基础",
+                    "combatants": "曹操 vs 袁绍",
+                    "result": "曹操胜利",
+                    "modern_location": "河南省中牟县东北",
+                    "historical_records": "正史记载：曹操焚毁袁绍粮草，以少胜多；演义描述：许攸献计，曹操采纳",
+                    "cultural_reference": "《三国演义》第三十回'战官渡本初败绩 劫乌巢孟德烧粮'",
+                    "url": "images\\d30686383ee84f72a2e82213636152b2.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        113.88,
+                        29.72
+                    ]
+                },
+                "properties": {
+                    "name": "赤壁古战场",
+                    "spot_type": "Battlefield",
+                    "event_name": "赤壁之战",
+                    "time_period": "公元208年",
+                    "historical_significance": "孙刘联军击败曹操，奠定三国鼎立格局",
+                    "combatants": "孙权、刘备联军 vs 曹操",
+                    "result": "孙刘联军胜利",
+                    "modern_location": "湖北省赤壁市西北长江沿岸",
+                    "historical_records": "正史记载：周瑜火攻破曹；演义描述：诸葛亮借东风，周瑜火攻",
+                    "cultural_reference": "《三国演义》第四十六回'用奇谋孔明借箭 献密计黄盖受刑'",
+                    "intangible_heritage": "草船借箭的智慧谋略",
+                    "url": "images\\f557f9da3797482398610d217f7a8134.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        111.45,
+                        30.38
+                    ]
+                },
+                "properties": {
+                    "name": "猇亭古战场",
+                    "spot_type": "Battlefield",
+                    "event_name": "夷陵之战",
+                    "time_period": "公元221-222年",
+                    "historical_significance": "陆逊火攻大败刘备，蜀汉元气大伤",
+                    "combatants": "刘备 vs 陆逊（东吴）",
+                    "result": "东吴胜利",
+                    "modern_location": "湖北省宜都市北",
+                    "historical_records": "正史记载：陆逊火攻连营；演义描述：陆逊火烧连营七百里",
+                    "cultural_reference": "《三国演义》第八十四回'陆逊营烧七百里 孔明巧布八阵图'",
+                    "url": "images\\ba6156c70acc4837a7fd38705eccf843.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        117.28,
+                        31.85
+                    ]
+                },
+                "properties": {
+                    "name": "逍遥津古战场",
+                    "spot_type": "Battlefield",
+                    "event_name": "合肥之战",
+                    "time_period": "公元215年",
+                    "historical_significance": "张辽以少胜多，威震逍遥津",
+                    "combatants": "张辽（魏） vs 孙权（吴）",
+                    "result": "魏国胜利",
+                    "modern_location": "安徽省合肥市逍遥津公园",
+                    "historical_records": "正史记载：张辽率800人突袭；演义描述：张辽威震逍遥津",
+                    "cultural_reference": "《三国演义》第六十七回'曹操平定汉中地 张辽威震逍遥津'",
+                    "url": "images\\87d0593d6e9c488face8e9707cb17bf4.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        105.67,
+                        34.85
+                    ]
+                },
+                "properties": {
+                    "name": "街亭古战场",
+                    "spot_type": "Battlefield",
+                    "event_name": "街亭之战",
+                    "time_period": "公元228年",
+                    "historical_significance": "马谡失守街亭，诸葛亮首次北伐失败",
+                    "combatants": "马谡（蜀） vs 张郃（魏）",
+                    "result": "魏国胜利",
+                    "modern_location": "甘肃省秦安县东南",
+                    "historical_records": "正史记载：马谡违背军令失守；演义描述：马谡纸上谈兵失街亭",
+                    "cultural_reference": "《三国演义》第九十五回'马谡拒谏失街亭 武侯弹琴退仲达'",
+                    "url": "images\\ea7aad68c1084a29a8dde752c41fd3bf.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        107.62,
+                        34.28
+                    ]
+                },
+                "properties": {
+                    "name": "五丈原古战场",
+                    "spot_type": "Battlefield",
+                    "event_name": "五丈原之战",
+                    "time_period": "公元234年",
+                    "historical_significance": "诸葛亮病逝五丈原，蜀汉北伐终结",
+                    "combatants": "诸葛亮（蜀） vs 司马懿（魏）",
+                    "result": "相持不下，诸葛亮病逝",
+                    "modern_location": "陕西省岐山县城南20公里",
+                    "historical_records": "正史记载：诸葛亮积劳成疾病逝；演义描述：诸葛亮禳星延寿失败",
+                    "cultural_reference": "《三国演义》第一百零四回'陨大星汉丞相归天 见木像魏都督丧胆'",
+                    "url": "images\\8f69bb16ef6a424d9e6e6e5af650ddcb.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        113.15,
+                        34.83
+                    ]
+                },
+                "properties": {
+                    "name": "虎牢关",
+                    "spot_type": "LiteraryBattleSite",
+                    "cultural_reference": "《三国演义》第五回'发矫诏诸镇应曹公 破关兵三英战吕布'",
+                    "author_artist": "罗贯中",
+                    "intangible_heritage": "三英战吕布的忠义精神",
+                    "description": "虚构的经典战役场景，关羽、张飞、刘备三人合力战吕布，成为忠义精神的象征",
+                    "historical_context": "虎牢关作为洛阳东大门确为重要军事要塞，但三英战吕布为文学虚构",
+                    "url": "images\\6a0ec5e221464b858e6eb76e3be79381.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        111.78,
+                        30.82
+                    ]
+                },
+                "properties": {
+                    "name": "长坂坡",
+                    "spot_type": "LiteraryBattleSite",
+                    "cultural_reference": "《三国演义》第四十一回'刘玄德携民渡江 赵子龙单骑救主'",
+                    "author_artist": "罗贯中",
+                    "intangible_heritage": "赵云单骑救主的勇武精神",
+                    "description": "赵云在长坂坡单骑救阿斗，七进七出曹军阵营，展现忠勇形象",
+                    "historical_context": "长坂坡之战在历史上确有发生，但赵云单骑救主的细节多为艺术渲染",
+                    "url": "images\\973ca2f2d6464c2fb0cb9d5b62757136.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        105.17,
+                        34.18
+                    ]
+                },
+                "properties": {
+                    "name": "西城（空城计）",
+                    "spot_type": "LiteraryBattleSite",
+                    "cultural_reference": "《三国演义》第九十五回'马谡拒谏失街亭 武侯弹琴退仲达'",
+                    "author_artist": "罗贯中",
+                    "intangible_heritage": "空城计的智慧与胆识",
+                    "description": "完全虚构的经典情节，诸葛亮在西城用空城计吓退司马懿大军",
+                    "historical_context": "历史上并无空城计事件，为罗贯中完全虚构的文学创作",
+                    "url": "images\\4c06633ab0484cc9b877b477127679d6.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        103.8,
+                        25.5
+                    ]
+                },
+                "properties": {
+                    "name": "南中地区（七擒孟获）",
+                    "spot_type": "LiteraryBattleSite",
+                    "cultural_reference": "《三国演义》第八十七回至第九十回七擒孟获系列",
+                    "author_artist": "罗贯中",
+                    "intangible_heritage": "七擒七纵的仁德政策",
+                    "description": "诸葛亮七擒七纵孟获，展现以德服人的治国理念",
+                    "historical_context": "七擒孟获虽基于历史，但具体情节多为虚构，构建了南中地区的文化想象",
+                    "url": "images\\30866dad26de492cadaf0b230183759f.jpeg"
+                }
+            }
+        ]
+    }
+}

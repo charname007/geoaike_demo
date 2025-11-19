@@ -281,7 +281,7 @@
             <!-- <button id="loadRecentFile" class="load-file-button">加载Cache数据</button> -->
 
             <div class="file-input-wrapper">
-                <label for="geoJsonFile" class="file-input-label">选择Cache文件</label>
+                <label for="geoJsonFile" class="file-input-label">加载Cache文件</label>
                 <input type="file" id="geoJsonFile" class="file-input" accept=".json,.geojson">
             </div>
 
@@ -529,16 +529,62 @@
 
                 const features = map_data.features.map((feature, index) => {
                     console.log(`创建要素 ${index}:`, feature);
+                    
+                    // 检查是否有有效的本地图片URL
+                    const imageUrl = feature.properties?.url;
+                    let geometry, style;
+                    
+                    if (imageUrl ) {
+                        // 如果有有效的本地图片路径，使用图片样式
 
-                    const olFeature = new ol.Feature({
-                        geometry: new ol.geom.Point(
+                        console.log(`要素 ${index} 使用图片URL:`, imageUrl);
+
+
+                        geometry = new ol.geom.Point(
                             ol.proj.fromLonLat(
-                                feature.geometry.coordinates || [0, 0]  // ✅ 从 geometry.coordinates 获取
+                                feature.geometry.coordinates || [0, 0]
                             )
-                        ),
-                        name: feature.properties.name || '未命名',  // ✅ 从 properties.name 获取
+                        );
+                        
+                        
+                        style = new ol.style.Style({
+                            image: new ol.style.Icon({
+                                src: './' + imageUrl,
+                                scale: 0.03,
+                                anchor: [0.5, 1]
+                            })
+                        });
+                    } else {
+                        // 如果没有图片URL或URL无效，使用默认的点样式
+                        console.log(`要素 ${index} 未提供有效图片URL，使用默认样式`);
+                        geometry = new ol.geom.Point(
+                            ol.proj.fromLonLat(
+                                feature.geometry.coordinates || [0, 0]
+                            )
+                        );
+                        
+                        style = new ol.style.Style({
+                            image: new ol.style.Circle({
+                                radius: 6,
+                                fill: new ol.style.Fill({
+                                    color: 'rgba(255, 0, 0, 0.6)'
+                                }),
+                                stroke: new ol.style.Stroke({
+                                    color: 'red',
+                                    width: 2
+                                })
+                            })
+                        });
+                    }
+                    
+                    const olFeature = new ol.Feature({
+                        geometry: geometry,
+                        name: feature.properties.name || '未命名',
                         originalData: feature // 存储原始数据，用于点击时显示详细信息
                     });
+                    
+                    // 设置样式
+                    olFeature.setStyle(style);
 
                     console.log(`OpenLayers要素 ${index} 创建完成:`, olFeature.getProperties());
                     return olFeature;
@@ -555,19 +601,8 @@
 
                 const vectorLayer = new ol.layer.Vector({
                     source: vectorSource,
-                    name: theme,
-                    style: new ol.style.Style({
-                        image: new ol.style.Circle({
-                            radius: 6,
-                            fill: new ol.style.Fill({
-                                color: 'rgba(255, 0, 0, 0.6)'
-                            }),
-                            stroke: new ol.style.Stroke({
-                                color: 'red',
-                                width: 2
-                            })
-                        })
-                    })
+                    name: theme
+                    // 移除统一样式，每个要素有自己的样式
                 });
 
                 map.addLayer(vectorLayer);
