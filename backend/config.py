@@ -2,7 +2,7 @@ from asyncio import Server
 import os
 from re import S
 from dotenv import load_dotenv
-from h11 import SERVER
+# from h11 import SERVER
 from loguru import logger
 # 加载 .env 文件中的环境变量
 # 这行代码会在你的应用启动时，将 .env 文件中的键值对加载到操作系统的环境变量中
