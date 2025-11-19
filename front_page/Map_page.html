@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地理信息地图系统</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.5.2/ol.css">
+    <!-- ol-ext -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/Viglino/ol-ext/master/dist/ol-ext.min.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .map-container {
+            height: 100vh;
+            width: 100%;
+            position: relative;
+        }
+
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+
+        .query-container {
+            position: absolute;
+            top: 20px;
+            left: 40px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            min-width: 400px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+
+        .load-file-container {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .load-file-button {
+            padding: 8px 16px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        .load-file-button:hover {
+            background: #218838;
+        }
+
+        .file-input-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-input {
+            position: absolute;
+            left: -9999px;
+        }
+
+        .file-input-label {
+            display: block;
+            padding: 8px 16px;
+            background: #6c757d;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .file-input-label:hover {
+            background: #5a6268;
+        }
+
+        .file-status {
+            font-size: 12px;
+            margin-top: 8px;
+            color: #666;
+        }
+
+        .query-input {
+            width: 450px;
+            min-height: 80px;
+            padding: 12px 16px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            resize: vertical;
+            line-height: 1.4;
+            vertical-align: top;
+            display: block;
+        }
+
+        .query-input:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25), 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .query-input::placeholder {
+            color: #6c757d;
+            font-style: italic;
+        }
+
+        .query-button {
+            padding: 12px 24px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .query-button:hover {
+            background: #0056b3;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .query-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .loading {
+            display: none;
+            color: #666;
+            font-size: 12px;
+            margin-top: 8px;
+        }
+
+        .error {
+            color: #dc3545;
+            font-size: 12px;
+            margin-top: 8px;
+        }
+
+        /* 要素属性弹窗样式 - 使用OpenLayers Overlay */
+        .ol-popup {
+            position: absolute;
+            background-color: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            min-width: 280px;
+            max-width: 350px;
+            max-height: 400px;
+            overflow-y: auto;
+            font-family: Arial, sans-serif;
+        }
+
+        .ol-popup:after, .ol-popup:before {
+            top: 100%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+        }
+
+        .ol-popup:after {
+            border-top-color: white;
+            border-width: 10px;
+            left: 48px;
+            margin-left: -10px;
+        }
+
+        .ol-popup:before {
+            border-top-color: #ccc;
+            border-width: 11px;
+            left: 48px;
+            margin-left: -11px;
+        }
+
+        .ol-popup-closer {
+            text-decoration: none;
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            font-size: 20px;
+            color: #666;
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+        }
+
+        .ol-popup-closer:hover {
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .ol-popup-title {
+            font-weight: bold;
+            font-size: 16px;
+            color: #333;
+            margin: 0 0 10px 0;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .ol-popup-content {
+            line-height: 1.5;
+        }
+
+        .feature-property {
+            margin-bottom: 10px;
+        }
+
+        .feature-property-label {
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 3px;
+            font-size: 13px;
+        }
+
+        .feature-property-value {
+            color: #333;
+            font-size: 14px;
+            word-wrap: break-word;
+        }
+
+        .feature-popup-coords {
+            font-size: 12px;
+            color: #666;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="map-container">
+        <div id="map"></div>
+        <div class="query-container">
+            <textarea id="queryInput" class="query-input" placeholder="输入主题，如：古代都城、丝绸之路、唐诗名地...&#10;也可以输入更详细的描述，如：明朝时期的边防要塞与军事重镇"></textarea>
+            <button id="queryButton" class="query-button">start</button>
+            <div id="status" class="loading"></div>
+        </div>
+
+        <!-- 文件加载控件 -->
+        <div class="load-file-container">
+            <!-- <button id="loadRecentFile" class="load-file-button">加载Cache数据</button> -->
+
+            <div class="file-input-wrapper">
+                <label for="geoJsonFile" class="file-input-label">选择Cache文件</label>
+                <input type="file" id="geoJsonFile" class="file-input" accept=".json,.geojson">
+            </div>
+
+            <div id="fileStatus" class="file-status"></div>
+        </div>
+
+        <!-- 要素属性弹窗 - 使用OpenLayers Overlay -->
+        <div id="popup" class="ol-popup">
+            <a href="#" id="popup-closer" class="ol-popup-closer">×</a>
+            <div id="popup-content"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/ol@v7.5.2/dist/ol.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/Viglino/ol-ext/master/dist/ol-ext.min.js"></script>
+
+    <script>
+        // 初始化地图，以中国为中心
+        const map = new ol.Map({
+            target: 'map',
+            layers: [
+                new ol.layer.Tile({
+                    name: 'OpenStreetMap',
+                    source: new ol.source.OSM()
+                })
+            ],
+            view: new ol.View({
+                center: ol.proj.fromLonLat([116.3974, 39.9093]), // 北京坐标
+                zoom: 5
+            })
+        });
+
+        map.addControl(new ol.control.LayerSwitcher({ collapsed: false }));
+        // 查询功能
+        const queryInput = document.getElementById('queryInput');
+        const queryButton = document.getElementById('queryButton');
+        const statusDiv = document.getElementById('status');
+
+        // 要素属性弹窗功能 - 使用OpenLayers Overlay
+        const container = document.getElementById('popup');
+        const content = document.getElementById('popup-content');
+        const closer = document.getElementById('popup-closer');
+
+        // 创建 Overlay
+        const popup = new ol.Overlay({
+            element: container,
+            autoPan: true,
+            positioning: 'bottom-center',
+            autoPanAnimation: {
+                duration: 250
+            },
+            stopEvent: true
+        });
+
+        // 添加Overlay到地图
+        map.addOverlay(popup);
+
+        // 文件加载功能
+        const geoJsonFileInput = document.getElementById('geoJsonFile');
+        const fileStatusDiv = document.getElementById('fileStatus');
+
+        // 存储当前地图数据，用于要素点击时获取属性
+        let currentMapData = null;
+        let currentFeatures = [];
+
+        // 显示状态信息
+        function showStatus(message, isError = false) {
+            statusDiv.textContent = message;
+            statusDiv.className = isError ? 'error' : 'loading';
+            statusDiv.style.display = 'block';
+        }
+
+        // 隐藏状态信息
+        function hideStatus() {
+            statusDiv.style.display = 'none';
+        }
+
+        // 显示要素属性弹窗 - 使用OpenLayers Overlay
+        function showFeaturePopup(feature) {
+            console.log('=== 弹窗显示调试开始 ===');
+            console.log('点击的要素:', feature);
+
+            const properties = feature.getProperties();
+            console.log('要素属性:', properties);
+
+            const originalData = properties.originalData; // 原始数据
+            console.log('原始数据:', originalData);
+
+            if (!originalData) {
+                console.error('错误：要素缺少originalData属性');
+                console.log('可用的属性键:', Object.keys(properties));
+                return;
+            }
+
+            // 设置弹窗标题
+            const title = originalData.properties?.name || '未命名要素';
+
+            // 构建属性内容
+            let contentHtml = `<h3 class="ol-popup-title">${title}</h3>`;
+
+            if (originalData.properties) {
+                for (const [key, value] of Object.entries(originalData.properties)) {
+                    if (key !== 'name' && value !== null && value !== undefined) {
+                        // 格式化属性名（将下划线转为中文空格或转换驼峰命名）
+                        const label = formatPropertyLabel(key);
+                        const formattedValue = formatPropertyValue(value);
+
+                        contentHtml += `
+                            <div class="feature-property">
+                                <div class="feature-property-label">${label}:</div>
+                                <div class="feature-property-value">${formattedValue}</div>
+                            </div>
+                        `;
+                    }
+                }
+            }
+
+            // 添加坐标信息
+            if (originalData.geometry?.coordinates) {
+                const [lon, lat] = originalData.geometry.coordinates;
+                contentHtml += `
+                    <div class="feature-popup-coords">
+                        坐标: ${lat.toFixed(4)}°N, ${lon.toFixed(4)}°E
+                    </div>
+                `;
+            }
+
+            content.innerHTML = contentHtml;
+
+            // 获取要素的坐标并设置弹窗位置
+            const coordinates = feature.getGeometry().getCoordinates();
+            popup.setPosition(coordinates);
+
+            console.log('弹窗已显示在坐标:', coordinates);
+            console.log('=== 弹窗显示调试结束 ===');
+        }
+
+        // 隐藏要素属性弹窗
+        function hideFeaturePopup() {
+            popup.setPosition(undefined);
+            closer.blur();
+        }
+
+        // 格式化属性标签
+        function formatPropertyLabel(key) {
+            // 将下划线和驼峰命名转换为可读的中文标签
+            const labelMap = {
+                'name': '名称',
+                'description': '描述',
+                'event_name': '事件名称',
+                'year': '年份',
+                'dynasty': '朝代',
+                'source': '来源',
+                'terrain_type': '地形类型',
+                'climate': '气候',
+                'altitude': '海拔',
+                'poetry_quote': '诗词引用',
+                'author': '作者',
+                'folklore': '民俗',
+                'symbolic_meaning': '象征意义',
+                'scientific_principle': '科学原理',
+                'data_value': '数据值',
+                'environmental_factor': '环境因素',
+                'type': '类型',
+                'historical_significance': '历史意义',
+                'cultural_significance': '文化意义',
+                'analysis': '分析结果'
+            };
+
+            return labelMap[key] || key.replace(/_/g, ' ').replace(/([A-Z])/g, ' $1').trim();
+        }
+
+        // 格式化属性值
+        function formatPropertyValue(value) {
+            if (Array.isArray(value)) {
+                return value.join(', ');
+            }
+            if (typeof value === 'object') {
+                return JSON.stringify(value, null, 2);
+            }
+            return String(value);
+        }
+
+        // 执行查询
+        async function performQuery() {
+            const query = queryInput.value.trim();
+            if (!query) {
+                showStatus('请输入需要LLM处理的地图主题', true);
+                return;
+            }
+
+            showStatus('正在处理...');
+
+            try {
+                const response = await fetch(`/collect_map_data?user_prompt=${encodeURIComponent(query)}`);
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                hideStatus();
+
+                // 在地图上显示数据
+                displayMapData(data);
+
+            } catch (error) {
+                showStatus(`处理失败: ${error.message}`, true);
+                console.error('Query error:', error);
+            }
+        }
+
+        // 在地图上显示数据
+        function displayMapData(data) {
+            console.log('=== displayMapData调试开始 ===');
+            console.log('接收到的完整数据:', data);
+
+
+            // 尝试不同的数据访问路径
+            let theme, map_data;
+
+            if (data.final_results) {
+                console.log('使用final_results路径访问数据');
+                theme = data.final_results.theme;
+                map_data = data.final_results.map_data;
+            } else if (data.theme && data.map_data) {
+                console.log('使用直接路径访问数据');
+                theme = data.theme;
+                map_data = data.map_data;
+            } else {
+                console.error('无法找到有效的数据路径');
+                console.log('可用的键:', Object.keys(data));
+                return;
+            }
+
+            console.log('主题:', theme);
+            console.log('地图数据:', map_data);
+
+            // 存储当前地图数据
+            currentMapData = map_data;
+
+            // 根据数据类型创建图层
+            if (map_data && map_data.features && Array.isArray(map_data.features)) {
+                console.log('开始创建要素，要素数量:', map_data.features.length);
+
+                const features = map_data.features.map((feature, index) => {
+                    console.log(`创建要素 ${index}:`, feature);
+
+                    const olFeature = new ol.Feature({
+                        geometry: new ol.geom.Point(
+                            ol.proj.fromLonLat(
+                                feature.geometry.coordinates || [0, 0]  // ✅ 从 geometry.coordinates 获取
+                            )
+                        ),
+                        name: feature.properties.name || '未命名',  // ✅ 从 properties.name 获取
+                        originalData: feature // 存储原始数据，用于点击时显示详细信息
+                    });
+
+                    console.log(`OpenLayers要素 ${index} 创建完成:`, olFeature.getProperties());
+                    return olFeature;
+                });
+
+                console.log('所有要素创建完成，总数:', features.length);
+
+                // 存储当前要素
+                currentFeatures = features;
+
+                const vectorSource = new ol.source.Vector({
+                    features: features
+                });
+
+                const vectorLayer = new ol.layer.Vector({
+                    source: vectorSource,
+                    name: theme,
+                    style: new ol.style.Style({
+                        image: new ol.style.Circle({
+                            radius: 6,
+                            fill: new ol.style.Fill({
+                                color: 'rgba(255, 0, 0, 0.6)'
+                            }),
+                            stroke: new ol.style.Stroke({
+                                color: 'red',
+                                width: 2
+                            })
+                        })
+                    })
+                });
+
+                map.addLayer(vectorLayer);
+
+                // 如果有数据，调整地图视图以显示所有点
+                if (features.length > 0) {
+                    const extent = vectorSource.getExtent();
+                    map.getView().fit(extent, { padding: [50, 50, 50, 50] });
+                    console.log('地图视图已调整到要素范围:', extent);
+                } else {
+                    console.log('没有要素需要显示');
+                }
+            } else {
+                console.log('地图数据格式不正确或为空');
+                console.log('map_data:', map_data);
+                console.log('map_data.features:', map_data?.features);
+            }
+
+            console.log('=== displayMapData调试结束 ===');
+        }
+
+
+        // 添加地图点击事件监听器 - 使用OpenLayers Overlay
+        map.on('click', (event) => {
+            console.log('=== 地图点击事件调试 ===');
+
+            // 使用forEachFeatureAtPixel获取点击的要素
+            const clickedFeature = map.forEachFeatureAtPixel(event.pixel, function (feature) {
+                return feature;
+            });
+
+            if (clickedFeature) {
+                console.log('点击的要素:', clickedFeature);
+                console.log('要素属性:', clickedFeature.getProperties());
+
+                // 使用OpenLayers Overlay显示弹窗
+                showFeaturePopup(clickedFeature);
+            } else {
+                // 点击空白区域，隐藏弹窗
+                console.log('点击空白区域，隐藏弹窗');
+                hideFeaturePopup();
+            }
+
+            console.log('=== 地图点击事件调试结束 ===');
+        });
+
+        // 添加鼠标移动事件，改变鼠标样式
+        map.on('pointermove', (event) => {
+            const pixel = event.pixel;
+            const hit = map.hasFeatureAtPixel(pixel);
+
+            map.getTargetElement().style.cursor = hit ? 'pointer' : '';
+        });
+
+        // 绑定弹窗关闭事件 - 使用OpenLayers Overlay
+        closer.onclick = function () {
+            popup.setPosition(undefined);
+            closer.blur();
+            return false;
+        };
+
+        // 点击弹窗外部关闭弹窗
+        map.on('click', function (evt) {
+            const hasOverlay = popup.getPosition() !== undefined;
+            if (!hasOverlay && evt.target === map.getTargetElement()) {
+                hideFeaturePopup();
+            }
+        });
+
+        // 绑定查询相关事件
+        queryButton.addEventListener('click', performQuery);
+        queryInput.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') {
+                performQuery();
+            }
+        });
+
+        // 窗口大小改变时隐藏弹窗
+        window.addEventListener('resize', hideFeaturePopup);
+
+        // 文件加载功能
+        async function loadGeoJsonFromFile(file) {
+            console.log('开始加载GeoJSON文件:', file.name);
+            fileStatusDiv.textContent = `正在加载文件: ${file.name}`;
+            fileStatusDiv.style.color = '#007bff';
+
+            try {
+                const text = await file.text();
+                let geoJsonData = JSON.parse(text);
+
+                console.log('GeoJSON文件解析成功:', geoJsonData);
+
+                // 检查数据格式 - 支持缓存文件和标准GeoJSON格式
+                let theme, mapData, summary, qualityAssessment;
+
+                if (geoJsonData.map_data && geoJsonData.map_data.features) {
+                    // 缓存文件格式
+                    console.log('检测到缓存文件格式');
+                    theme = geoJsonData.theme || file.name.replace('.json', '').replace(/_/g, ' ');
+                    mapData = geoJsonData.map_data;
+                    summary = geoJsonData.summary || '从文件加载的地理数据';
+                    qualityAssessment = geoJsonData.quality_assessment || {};
+                } else if (geoJsonData.features) {
+                    // 标准GeoJSON格式
+                    console.log('检测到标准GeoJSON格式');
+                    theme = file.name.replace('.json', '').replace(/_/g, ' ');
+                    mapData = geoJsonData;
+                    summary = '从GeoJSON文件加载的地理数据';
+                    qualityAssessment = {};
+                } else {
+                    throw new Error('无效的文件格式：缺少features数组或map_data');
+                }
+
+                // 创建模拟的API响应格式
+                const mockApiResponse = {
+                    final_results: {
+                        theme: theme,
+                        map_data: mapData,
+                        summary: summary,
+                        quality_assessment: qualityAssessment
+                    }
+                };
+
+                console.log('模拟API响应:', mockApiResponse);
+
+                // 调用现有的显示数据函数
+                displayMapData(mockApiResponse);
+
+                const featureCount = mapData?.features?.length || 0;
+                fileStatusDiv.textContent = `成功加载 ${featureCount} 个要素`;
+                fileStatusDiv.style.color = '#28a745';
+
+                setTimeout(() => {
+                    fileStatusDiv.textContent = '';
+                }, 3000);
+
+            } catch (error) {
+                console.error('文件加载失败:', error);
+                fileStatusDiv.textContent = `加载失败: ${error.message}`;
+                fileStatusDiv.style.color = '#dc3545';
+            }
+        }
+
+        // 加载最新缓存文件
+
+        geoJsonFileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                loadGeoJsonFromFile(file);
+            }
+        });
+
+        // 页面加载完成后聚焦输入框
+        window.addEventListener('load', () => {
+            queryInput.focus();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+{
+    "theme": "中国古代战争地图",
+    "summary": "通过对中国古代重要战争地点的空间分析，可以清晰地看到中国历史战争的地理分布规律。从时间维度看，这些决定性战役贯穿了从商周到明清的整个古代历史时期，每个时代都有其标志性的战场。从地理分布看，重要战场主要集中在黄河中下游平原、长江中游地区、山西高原、四川盆地和辽东地区等战略要地。这些战场的选择体现了古代军事家的战略智慧，往往位于交通枢纽、地形险要之处。战争地点的空间分布也反映了中国历史发展的南北对峙、东西争衡的格局特征。",
+    "quality_assessment": {
+        "data_quality": "高",
+        "坐标精度": "良好",
+        "历史准确性": "可靠",
+        "覆盖完整性": "较全面",
+        "时间跨度": "从公元前1046年至公元1619年"
+    },
+    "map_data": {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        112.8333,
+                        35.8333
+                    ]
+                },
+                "properties": {
+                    "name": "长平之战古战场",
+                    "description": "战国时期秦赵决定性战役，赵国40万将士被坑杀",
+                    "year": "公元前260年",
+                    "spot_type": "Battlefield",
+                    "event_name": "长平之战",
+                    "time_period": "战国时期",
+                    "historical_significance": "秦统一六国的关键战役，改变了战国格局"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        113.8951,
+                        29.7282
+                    ]
+                },
+                "properties": {
+                    "name": "赤壁之战古战场",
+                    "description": "三国时期孙刘联军火烧曹操战船",
+                    "year": "公元208年",
+                    "spot_type": "Battlefield",
+                    "event_name": "赤壁之战",
+                    "time_period": "三国时期",
+                    "historical_significance": "奠定了三国鼎立格局，阻止了曹操统一南方"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        116.7833,
+                        32.5833
+                    ]
+                },
+                "properties": {
+                    "name": "淝水之战遗址",
+                    "description": "东晋以少胜多击败前秦的关键战役",
+                    "year": "公元383年",
+                    "spot_type": "Battlefield",
+                    "event_name": "淝水之战",
+                    "time_period": "东晋时期",
+                    "historical_significance": "阻止了前秦统一中国，确立了南北朝对峙格局"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        106.2833,
+                        30.0167
+                    ]
+                },
+                "properties": {
+                    "name": "钓鱼城古战场",
+                    "description": "南宋抗蒙36年，击毙蒙古大汗蒙哥",
+                    "year": "1259年",
+                    "spot_type": "FortressBattlefield",
+                    "event_name": "钓鱼城之战",
+                    "time_period": "南宋时期",
+                    "historical_significance": "改变了世界历史进程，迫使蒙古从欧亚战场撤军"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        114.0167,
+                        34.7167
+                    ]
+                },
+                "properties": {
+                    "name": "官渡之战遗址",
+                    "description": "曹操击败袁绍，奠定统一北方基础",
+                    "year": "公元200年",
+                    "spot_type": "Battlefield",
+                    "event_name": "官渡之战",
+                    "time_period": "东汉末年",
+                    "historical_significance": "三国鼎立格局形成的关键战役"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        113.85,
+                        35.3
+                    ]
+                },
+                "properties": {
+                    "name": "牧野之战遗址",
+                    "description": "周武王伐纣，商朝灭亡的关键战役",
+                    "year": "公元前1046年",
+                    "spot_type": "Battlefield",
+                    "event_name": "牧野之战",
+                    "time_period": "商周之际",
+                    "historical_significance": "中国历史上最早有确切记载的战争，开启了西周时代"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        112.1333,
+                        32.0167
+                    ]
+                },
+                "properties": {
+                    "name": "襄阳古城",
+                    "description": "宋元襄阳之战，坚守6年之久",
+                    "year": "1267-1273年",
+                    "spot_type": "SiegeBattlefield",
+                    "event_name": "襄阳之战",
+                    "time_period": "宋元时期",
+                    "historical_significance": "南宋灭亡的关键战役，被称为铁打的襄阳"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        124.4,
+                        41.8333
+                    ]
+                },
+                "properties": {
+                    "name": "萨尔浒之战遗址",
+                    "description": "明军与后金决定性战役",
+                    "year": "1619年",
+                    "spot_type": "Battlefield",
+                    "event_name": "萨尔浒之战",
+                    "time_period": "明末清初",
+                    "historical_significance": "明清兴衰转折点，后金从此崛起"
+                }
+            }
+        ]
+    }
+}

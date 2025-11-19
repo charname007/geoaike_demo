@@ -1,0 +1,276 @@
+{
+    "theme": "古代诗歌中的地名与人文地理",
+    "summary": "通过对古代诗歌中地名的综合分析，我们发现这些文学地理节点呈现出明显的空间分布规律：\n\n1. **文化地理集群效应**：诗歌地名主要集中在长江流域和黄河流域两大文化带，特别是江南水乡（苏州、杭州、扬州）、长江三峡沿线（夔州、赤壁）、关中平原（长安）等区域，形成了密集的文化地理网络。\n\n2. **历史地理分层**：不同历史时期的地名呈现出层次分布。汉代关隘（玉门关、阳关）位于西部边陲，唐代都城（长安）居中，宋代城市（杭州、苏州）偏东，反映了中国历史文化重心的东移过程。\n\n3. **自然环境与文学创作的互动**：诗歌中的地理意象与自然环境密切相关。庐山瀑布、长江三峡等自然景观成为诗人创作的重要灵感来源，而大漠戈壁、边塞关隘则承载了边塞诗的豪迈情怀。\n\n4. **文化传承的空间载体**：这些诗歌地名不仅是地理坐标，更是文化记忆的载体。通过诗歌的传播，这些地点获得了超越时空的文化意义，形成了'文以载道，地以文传'的文化地理传承模式。\n\n5. **时空分布特征**：从时间维度看，唐代诗歌地名最为丰富；从空间维度看，江南地区密度最高，体现了经济文化重心南移的历史趋势。",
+    "quality_assessment": {
+        "data_source_reliability": "高",
+        "coordinate_accuracy": "中等",
+        "cultural_integrity": "高",
+        "spatial_coverage": "良好",
+        "attribute_completeness": "良好"
+    },
+    "map_data": {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        115.98,
+                        29.52
+                    ]
+                },
+                "properties": {
+                    "name": "庐山",
+                    "spot_type": "PoetrySite",
+                    "cultural_reference": "李白《望庐山瀑布》：'飞流直下三千尺，疑是银河落九天'",
+                    "author_artist": "李白",
+                    "intangible_heritage": "道教名山，李白诗歌创作地",
+                    "historical_info": "庐山作为道教名山，历代文人墨客在此留下大量诗作",
+                    "geographical_info": "三级阶梯状瀑布、U形谷、冰川侵蚀地貌，亚热带季风气候",
+                    "description": "位于江西省九江市，因李白此诗而成为中国文化名山，庐山三叠泉瀑布是庐山核心景观"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        109.47,
+                        31.05
+                    ]
+                },
+                "properties": {
+                    "name": "夔州白帝城",
+                    "spot_type": "PoetrySite",
+                    "cultural_reference": "杜甫《登高》：'无边落木萧萧下，不尽长江滚滚来'",
+                    "author_artist": "杜甫",
+                    "intangible_heritage": "杜甫晚年创作地，被誉为'七律之冠'",
+                    "historical_info": "位于长江三峡入口，历史上是军事要塞和商贸重镇",
+                    "geographical_info": "长江三峡西段门户，深切峡谷地貌，亚热带季风气候",
+                    "description": "位于重庆市奉节县，杜甫在此创作了千古名篇《登高》，是长江三峡文化的重要节点"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        105.18,
+                        37.5
+                    ]
+                },
+                "properties": {
+                    "name": "宁夏中卫沙坡头",
+                    "spot_type": "PoetrySite",
+                    "cultural_reference": "王维《使至塞上》：'大漠孤烟直，长河落日圆'",
+                    "author_artist": "王维",
+                    "intangible_heritage": "边塞诗创作地，丝绸之路重要节点",
+                    "historical_info": "古代丝绸之路的重要通道，连接中原与西域",
+                    "geographical_info": "黄河沿岸沙漠景观，温带大陆性干旱气候",
+                    "description": "位于宁夏中卫市，王维在此创作了边塞诗代表作，体现了边塞风光与人文情怀的结合"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        116.0,
+                        29.7
+                    ]
+                },
+                "properties": {
+                    "name": "九江浔阳江头",
+                    "spot_type": "PoetrySite",
+                    "cultural_reference": "白居易《琵琶行》：'浔阳江头夜送客，枫叶荻花秋瑟瑟'",
+                    "author_artist": "白居易",
+                    "intangible_heritage": "白居易贬官江州司马时创作地",
+                    "historical_info": "古代长江重要港口，商贸繁荣",
+                    "geographical_info": "长江中游沿岸，亚热带季风气候",
+                    "description": "位于江西省九江市，白居易在此创作了长篇叙事诗《琵琶行》，反映了唐代文人仕途沉浮"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        113.9,
+                        29.7
+                    ]
+                },
+                "properties": {
+                    "name": "赤壁古战场",
+                    "spot_type": "Battlefield",
+                    "cultural_reference": "苏轼《念奴娇·赤壁怀古》",
+                    "author_artist": "苏轼",
+                    "intangible_heritage": "三国文化重要地标，文人怀古抒情场所",
+                    "historical_info": "三国时期著名战役，孙刘联军在此以少胜多击败曹操，奠定了三国鼎立的基础",
+                    "geographical_info": "长江中游沿岸，亚热带季风气候",
+                    "description": "位于湖北省赤壁市，苏轼在此创作了《念奴娇·赤壁怀古》，将历史事件与文学创作完美结合"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        108.94,
+                        34.26
+                    ]
+                },
+                "properties": {
+                    "name": "长安（西安）",
+                    "spot_type": "AncientCapital",
+                    "cultural_reference": "李白《清平调》、杜甫《春望》等众多唐诗",
+                    "author_artist": "多位唐代诗人",
+                    "intangible_heritage": "十三朝古都，唐诗创作中心",
+                    "historical_info": "中国历史上建都时间最长的都城，唐代达到鼎盛，成为世界性大都市",
+                    "geographical_info": "关中平原中心，渭河流域，温带季风气候",
+                    "description": "位于陕西省西安市，是唐代诗歌创作的重要中心，众多著名诗人在此留下传世佳作"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        119.42,
+                        32.39
+                    ]
+                },
+                "properties": {
+                    "name": "扬州",
+                    "spot_type": "CommercialCity",
+                    "cultural_reference": "杜牧《遣怀》、徐凝《忆扬州》",
+                    "author_artist": "杜牧等",
+                    "intangible_heritage": "唐代商业都会，江南文化重镇",
+                    "historical_info": "隋唐时期重要的商业城市和漕运枢纽，以繁华富庶闻名",
+                    "geographical_info": "长江三角洲北部，京杭大运河枢纽，亚热带季风气候",
+                    "description": "位于江苏省扬州市，唐代重要的商业城市，杜牧等诗人曾在此任职并创作"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        94.86,
+                        40.35
+                    ]
+                },
+                "properties": {
+                    "name": "玉门关",
+                    "spot_type": "FrontierFortress",
+                    "cultural_reference": "王之涣《凉州词》、王昌龄《从军行》",
+                    "author_artist": "王之涣、王昌龄",
+                    "intangible_heritage": "丝绸之路关隘，边塞诗重要意象",
+                    "historical_info": "汉代设立的西部重要关隘，控制丝绸之路北道，军事和商贸重镇",
+                    "geographical_info": "河西走廊西端，戈壁荒漠环境，温带大陆性干旱气候",
+                    "description": "位于甘肃省敦煌市，汉代重要关隘，是边塞诗创作的重要地理背景"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        94.11,
+                        39.94
+                    ]
+                },
+                "properties": {
+                    "name": "阳关",
+                    "spot_type": "FrontierFortress",
+                    "cultural_reference": "王维《送元二使安西》",
+                    "author_artist": "王维",
+                    "intangible_heritage": "丝绸之路关隘，送别诗经典场景",
+                    "historical_info": "汉代设立的西部重要关隘，控制丝绸之路南道，通商要道",
+                    "geographical_info": "河西走廊西端，邻近玉门关，戈壁荒漠环境",
+                    "description": "位于甘肃省敦煌市，与玉门关并称西部重要关隘，王维在此创作了著名的送别诗"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        120.16,
+                        30.25
+                    ]
+                },
+                "properties": {
+                    "name": "杭州西湖",
+                    "spot_type": "CulturalLandscape",
+                    "cultural_reference": "苏轼《饮湖上初晴后雨》、柳永《望海潮》",
+                    "author_artist": "苏轼、柳永",
+                    "intangible_heritage": "江南水乡代表，文人雅集胜地",
+                    "historical_info": "宋代以来江南文化的核心区域，文人雅集、诗词创作的重要场所",
+                    "geographical_info": "江南水网核心，淡水湖泊景观，亚热带季风气候",
+                    "description": "位于浙江省杭州市，宋代以来成为江南文化的重要象征，苏轼等文人曾在此留下大量诗作"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        120.62,
+                        31.32
+                    ]
+                },
+                "properties": {
+                    "name": "苏州寒山寺",
+                    "spot_type": "PoetrySite",
+                    "cultural_reference": "张继《枫桥夜泊》：'姑苏城外寒山寺，夜半钟声到客船'",
+                    "author_artist": "张继",
+                    "intangible_heritage": "夜半钟声习俗，中日文化交流见证",
+                    "historical_info": "宋代以来江南经济文化重镇，园林艺术和文人文化的代表",
+                    "geographical_info": "太湖流域，江南水乡环境，亚热带季风气候",
+                    "description": "位于江苏省苏州市，因张继此诗而闻名中外，是江南文化的重要地标"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        110.45,
+                        34.87
+                    ]
+                },
+                "properties": {
+                    "name": "永济鹳雀楼",
+                    "spot_type": "PoetrySite",
+                    "cultural_reference": "王之涣《登鹳雀楼》：'欲穷千里目，更上一层楼'",
+                    "author_artist": "王之涣",
+                    "intangible_heritage": "唐代三大名楼之一，盛唐气象象征",
+                    "historical_info": "唐代重要文化建筑，文人登高望远场所",
+                    "geographical_info": "黄河中游沿岸，黄土高原边缘",
+                    "description": "位于山西省永济市，与黄鹤楼、岳阳楼并称三大名楼，王之涣在此创作了千古名句"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        117.57,
+                        30.67
+                    ]
+                },
+                "properties": {
+                    "name": "池州杏花村",
+                    "spot_type": "PoetrySite",
+                    "cultural_reference": "杜牧《清明》：'借问酒家何处有，牧童遥指杏花村'",
+                    "author_artist": "杜牧",
+                    "intangible_heritage": "清明文化重要地标，酒文化象征",
+                    "historical_info": "古代酒文化重要产地",
+                    "geographical_info": "长江南岸，皖南丘陵地区",
+                    "description": "位于安徽省池州市，因杜牧此诗而成为酒文化圣地，体现了诗歌对地方文化的塑造作用"
+                }
+            }
+        ]
+    }
+}

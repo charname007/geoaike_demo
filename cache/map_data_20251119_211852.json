@@ -1,0 +1,298 @@
+{
+    "theme": "中国古代战争地图",
+    "summary": "本地图综合展现了中国古代战争的地理分布格局与历史演变脉络。从空间分布来看，古代战争地点呈现出明显的区域集中性和时间递进性：\n\n**空间分布特征：**\n1. **黄河流域核心区**：早期战争（牧野之战、长平之战、官渡之战）主要集中在黄河中下游地区，反映了夏商周至秦汉时期中原文明的核心地位\n2. **长江流域扩展区**：三国至南北朝时期（赤壁之战、淝水之战），战争重心开始向长江流域转移\n3. **边疆关隘防御带**：函谷关、潼关、山海关、嘉峪关等军事要塞构成了从东到西的完整防御体系\n4. **南方沿海终结点**：崖山海战标志着战争地理的最终南移\n\n**历史演变规律：**\n- 从商周到南宋，战争地理呈现出由北向南、由内陆向沿海的渐进式转移\n- 关隘要塞的分布反映了古代中国\"据险而守\"的军事地理思想\n- 重要战役多发生在交通要道、河流渡口、峡谷关隘等战略节点\n\n**军事地理价值：**\n这些战争地点不仅记录了历史转折，更体现了中国古代\"天时不如地利\"的军事智慧，展现了地理环境对战争形态和历史走向的深刻影响。",
+    "quality_assessment": {
+        "data_source_reliability": "高",
+        "coordinate_accuracy": "中等",
+        "historical_verification": "高",
+        "spatial_coverage": "全面",
+        "attribute_completeness": "完整",
+        "overall_confidence": 0.85
+    },
+    "map_data": {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        113.85,
+                        35.3
+                    ]
+                },
+                "properties": {
+                    "name": "牧野之战古战场",
+                    "description": "商周更替的决定性战役，周武王在此击败商纣王",
+                    "year": "约公元前1046年",
+                    "spot_type": "Battlefield",
+                    "event_name": "牧野之战",
+                    "time_period": "商周时期",
+                    "historical_significance": "商朝灭亡，周朝建立，中国历史进入新的发展阶段",
+                    "modern_location": "河南省新乡市附近",
+                    "terrain_features": "平原地区",
+                    "climate_zone": "温带季风气候",
+                    "military_value": "中原核心地区，交通要道"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        112.9,
+                        35.8
+                    ]
+                },
+                "properties": {
+                    "name": "长平之战古战场",
+                    "description": "战国时期规模最大的歼灭战，秦将白起在此坑杀赵军40万",
+                    "year": "公元前260年",
+                    "spot_type": "Battlefield",
+                    "event_name": "长平之战",
+                    "time_period": "战国时期",
+                    "historical_significance": "奠定了秦国统一六国的基础，加速了战国时期的结束",
+                    "modern_location": "山西省晋城市高平市西北",
+                    "terrain_features": "山地丘陵",
+                    "climate_zone": "温带季风气候",
+                    "military_value": "太行山要冲，控制山西高原与华北平原通道"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        115.0,
+                        37.2
+                    ]
+                },
+                "properties": {
+                    "name": "巨鹿之战古战场",
+                    "description": "秦末农民起义的关键战役，项羽在此破釜沉舟大败秦军",
+                    "year": "公元前207年",
+                    "spot_type": "Battlefield",
+                    "event_name": "巨鹿之战",
+                    "time_period": "秦末",
+                    "historical_significance": "加速了秦朝灭亡，为楚汉相争奠定了基础",
+                    "modern_location": "河北省邢台市巨鹿县",
+                    "terrain_features": "平原地区",
+                    "climate_zone": "温带季风气候",
+                    "military_value": "华北平原重要据点，连接南北交通"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        114.0,
+                        34.8
+                    ]
+                },
+                "properties": {
+                    "name": "官渡之战古战场",
+                    "description": "三国时期北方统一的关键战役，曹操在此击败袁绍",
+                    "year": "公元200年",
+                    "spot_type": "Battlefield",
+                    "event_name": "官渡之战",
+                    "time_period": "东汉末年",
+                    "historical_significance": "确立了曹操的北方霸主地位，为三国鼎立格局奠定基础",
+                    "modern_location": "河南省郑州市中牟县东北",
+                    "terrain_features": "黄河沿岸平原",
+                    "climate_zone": "温带季风气候",
+                    "military_value": "黄河渡口要地，控制中原腹地"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        113.9,
+                        29.7
+                    ]
+                },
+                "properties": {
+                    "name": "赤壁之战古战场",
+                    "description": "三国时期以少胜多的经典战役，孙刘联军在此火烧曹军",
+                    "year": "公元208年",
+                    "spot_type": "Battlefield",
+                    "event_name": "赤壁之战",
+                    "time_period": "三国时期",
+                    "historical_significance": "确立了三国鼎立格局，阻止了曹操统一全国",
+                    "modern_location": "湖北省咸宁市赤壁市",
+                    "terrain_features": "长江沿岸丘陵",
+                    "climate_zone": "亚热带季风气候",
+                    "military_value": "长江天险重要节点，控制江汉平原"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        116.8,
+                        32.6
+                    ]
+                },
+                "properties": {
+                    "name": "淝水之战古战场",
+                    "description": "东晋时期以少胜多的经典战例，前秦在此大败于东晋",
+                    "year": "公元383年",
+                    "spot_type": "Battlefield",
+                    "event_name": "淝水之战",
+                    "time_period": "东晋时期",
+                    "historical_significance": "确立了南北朝对峙格局，保护了南方汉文化的延续",
+                    "modern_location": "安徽省淮南市寿县东南",
+                    "terrain_features": "淮河流域平原",
+                    "climate_zone": "亚热带季风气候",
+                    "military_value": "淮河防线重要据点，南北分界线"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        113.0,
+                        22.5
+                    ]
+                },
+                "properties": {
+                    "name": "崖山海战古战场",
+                    "description": "南宋与元军的最后决战，南宋在此战败灭亡",
+                    "year": "公元1279年",
+                    "spot_type": "NavalBattlefield",
+                    "event_name": "崖山海战",
+                    "time_period": "南宋末年",
+                    "historical_significance": "标志着南宋灭亡，蒙元统一中国，中国历史进入新的时期",
+                    "modern_location": "广东省江门市新会区",
+                    "terrain_features": "沿海岛屿",
+                    "climate_zone": "亚热带海洋性气候",
+                    "military_value": "南海重要海防据点，控制海上交通"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        110.85,
+                        34.65
+                    ]
+                },
+                "properties": {
+                    "name": "函谷关",
+                    "description": "中国古代十大雄关之一，位于河南灵宝市函谷关镇王垛村，西据高原，东临绝涧，南接秦岭，北塞黄河",
+                    "spot_type": "MountainPass",
+                    "terrain_features": "峡谷通道、黄河天险、秦岭余脉",
+                    "climate_zone": "温带季风气候",
+                    "spatial_importance": "关中与中原的唯一咽喉，秦统一六国的战略锁钥",
+                    "military_value": "车不方轨，马不并辔，一夫当关万夫莫开",
+                    "historical_events": "多次成为重要战役发生地"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        110.23,
+                        34.55
+                    ]
+                },
+                "properties": {
+                    "name": "潼关",
+                    "description": "位于陕西潼关县北，北临黄河，南踞山腰，为华北、中原、西北之咽喉要冲",
+                    "spot_type": "MountainPass",
+                    "terrain_features": "黄河天险、秦岭屏障、禁沟深谷",
+                    "climate_zone": "温带季风气候",
+                    "spatial_importance": "关中东大门，西进长安东去洛阳必经之路",
+                    "military_value": "畿内首险，三秦镇钥，四镇咽喉，百二重关",
+                    "historical_events": "历代兵家必争之地"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        119.75,
+                        40.0
+                    ]
+                },
+                "properties": {
+                    "name": "山海关",
+                    "description": "明太祖朱元璋幽蓟东来第一关，北依燕山，南临渤海，东接辽宁，西近京津",
+                    "spot_type": "CoastalFortress",
+                    "terrain_features": "燕山山脉、渤海海岸、长城起点",
+                    "climate_zone": "东部季风暖湿带湿润气候",
+                    "spatial_importance": "万里长城起点，连接华北与东北的咽喉",
+                    "military_value": "天下第一关，襟连沧海枕青山，长城远岫分高下",
+                    "historical_events": "明清之际重要军事要塞"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        98.22,
+                        39.8
+                    ]
+                },
+                "properties": {
+                    "name": "嘉峪关",
+                    "description": "万里长城西部终点，地处甘肃河西走廊中部，嘉峪山麓，因山两名",
+                    "spot_type": "DesertFortress",
+                    "terrain_features": "祁连山脉、戈壁荒漠、河西走廊",
+                    "climate_zone": "温带大陆性干旱气候",
+                    "spatial_importance": "丝绸之路重要关隘，西部边防重地",
+                    "military_value": "天下第一雄关，控制河西走廊西端出口",
+                    "historical_events": "明代西部边防重镇"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        112.85,
+                        39.18
+                    ]
+                },
+                "properties": {
+                    "name": "雁门关",
+                    "description": "位于山西代县，恒山山脉重要关隘，扼守山西北部要道",
+                    "spot_type": "MountainPass",
+                    "terrain_features": "恒山山脉、雁门山峡谷",
+                    "climate_zone": "温带大陆性气候",
+                    "spatial_importance": "山西北部重要门户，连接中原与塞外",
+                    "military_value": "中华第一关，历代兵家必争之地",
+                    "historical_events": "汉匈战争、宋辽战争重要战场"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        106.75,
+                        29.53
+                    ]
+                },
+                "properties": {
+                    "name": "长江三峡",
+                    "description": "长江上游瞿塘峡、巫峡、西陵峡三段峡谷总称，长江天险重要组成部分",
+                    "spot_type": "RiverGorge",
+                    "terrain_features": "峡谷险滩、悬崖峭壁、急流险滩",
+                    "climate_zone": "亚热带季风气候",
+                    "spatial_importance": "长江航运咽喉，连接巴蜀与荆楚",
+                    "military_value": "长江天险，历代水战重要战场",
+                    "historical_events": "三国时期重要水战区域"
+                }
+            }
+        ]
+    }
+}
