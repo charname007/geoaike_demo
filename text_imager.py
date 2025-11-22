@@ -3,6 +3,8 @@ from config import DOUBAO_CONFIG
 import os
 import requests
 import uuid
+import asyncio
+import aiohttp
 from urllib.parse import urlparse
 # 通过 pip install 'volcengine-python-sdk[ark]' 安装方舟SDK
 from volcenginesdkarkruntime import Ark
@@ -99,7 +101,115 @@ def download_image(image_url: str) -> str:
     except Exception as e:
         logger.error(f"图片下载失败: {e}")
         raise
+
+# 异步版本的图片下载
+async def download_image_async(image_url: str) -> str:
+    """异步从URL下载图片并保存到images文件夹
     
+    Args:
+        image_url: 图片URL
+        
+    Returns:
+        str: 本地图片路径
+    """
+    try:
+        # 生成唯一文件名
+        file_extension = ".jpg"
+        parsed_url = urlparse(image_url)
+        if parsed_url.path:
+            path_parts = parsed_url.path.split('.')
+            if len(path_parts) > 1:
+                file_extension = "." + path_parts[-1].lower()
+        
+        filename = f"{uuid.uuid4().hex}{file_extension}"
+        local_path = os.path.join(dir_image, filename)
+        
+        # 异步下载图片
+        timeout = aiohttp.ClientTimeout(total=60)
+        async with aiohttp.ClientSession(timeout=timeout) as session:
+            async with session.get(image_url) as response:
+                response.raise_for_status()
+                content = await response.read()
+                
+                with open(local_path, 'wb') as f:
+                    f.write(content)
+                
+        logger.info(f"图片下载成功: {local_path}")
+        return local_path
+        
+    except Exception as e:
+        logger.error(f"图片下载失败: {e}")
+        raise
+
+# 异步版本的图片生成（包装同步API调用）
+async def generate_symbol_image_async(location_description: str) -> str:
+    """异步包装同步的图片生成API调用"""
+    import concurrent.futures
+    
+    # 使用线程池执行同步函数，避免事件循环冲突
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        loop = asyncio.get_event_loop()
+        return await loop.run_in_executor(
+            executor,
+            generate_symbol_image,  # 原来的同步函数
+            location_description
+        )
+
+# 异步处理单个特征
+async def process_single_feature_async(feature) -> tuple:
+    """异步处理单个特征
+    
+    Returns:
+        tuple: (feature, description, local_path_or_error)
+    """
+    # 提取properties作为描述
+    description = ""
+    if feature.properties:
+        desc_parts = []
+        for key, value in feature.properties.items():
+            if value:
+                desc_parts.append(f"{key}: {value}")
+        description = ", ".join(desc_parts)
+    
+    if not description:
+        description = "地理特征符号"
+    
+    try:
+        # 异步生成图片
+        image_url = await generate_symbol_image_async(description)
+        
+        # 异步下载图片
+        local_path = await download_image_async(image_url)
+        
+        # 将本地图片路径作为url属性添加到feature的properties中
+        if not feature.properties:
+            feature.properties = {}
+        feature.properties["url"] = local_path
+        
+        logger.info(f"为特征生成图片完成: {description} -> {local_path}")
+        return feature, description, local_path
+        
+    except Exception as e:
+        logger.error(f"为特征生成图片失败: {description}, 错误: {e}")
+        return feature, description, None
+
+# 异步批处理所有特征
+async def process_features_async(features):
+    """异步批处理所有特征"""
+    # 创建所有异步任务
+    tasks = [process_single_feature_async(feature) for feature in features]
+    
+    # 并发执行所有任务
+    results = await asyncio.gather(*tasks, return_exceptions=True)
+    
+    # 统计结果
+    successful_count = sum(1 for result in results if isinstance(result, tuple) and result[2] is not None)
+    failed_count = len(results) - successful_count
+    
+    logger.info(f"异步处理完成: 成功 {successful_count} 个，失败 {failed_count} 个")
+    
+    return results
+
 if __name__ == "__main__":
     test_description = "长城，蜿蜒在群山之间，象征着中国古代的军事防御工程和文化遗产"
     image_url = generate_symbol_image(test_description)

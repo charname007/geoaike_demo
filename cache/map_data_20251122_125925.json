@@ -1,0 +1,238 @@
+{
+    "theme": "中国古代历朝都城分布图",
+    "summary": "通过对中国历代都城分布的综合分析，可以清晰地看到中国政治中心从黄河流域向全国扩散的历史轨迹。都城选址呈现出明显的时空分布规律：\n\n1. **早期文明阶段（夏商周）**：都城主要集中在黄河中下游的中原地区，如阳城、斟鄩、亳、殷等，体现了早期文明对肥沃平原的依赖。\n\n2. **秦汉时期**：政治中心西移至关中平原的长安、咸阳，依托\"四塞之国\"的天然防御优势，形成了强大的中央集权体系。\n\n3. **魏晋南北朝**：出现南北分治格局，北方以洛阳为中心，南方以建康（南京）为核心，反映了南北地理环境的差异。\n\n4. **隋唐鼎盛**：长安达到历史巅峰，成为世界级大都市，同时洛阳作为东都发挥重要作用。\n\n5. **宋元明清**：都城逐步东移，从开封到杭州，最终稳定在北京，体现了经济重心南移和北方防御需求的双重影响。\n\n地理环境对都城选址的决定性作用体现在：长安的关中四塞、洛阳的河洛平原、北京的燕山屏障、南京的长江天险、杭州的运河枢纽。这些地理要素共同塑造了中国历史都城\"中原-关中-江南-华北\"的循环分布模式。",
+    "quality_assessment": {
+        "data_quality": "高",
+        "spatial_accuracy": "良好",
+        "historical_accuracy": "高",
+        "coverage_completeness": "全面",
+        "confidence_level": 0.9
+    },
+    "map_data": {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        112.42,
+                        34.75
+                    ]
+                },
+                "properties": {
+                    "name": "夏朝阳城",
+                    "description": "夏朝早期都城，位于今河南省登封市告成镇",
+                    "year": "约公元前2070年",
+                    "spot_type": "AncientCapital",
+                    "historical_significance": "中国历史上第一个世袭制王朝的都城",
+                    "terrain": "山间盆地",
+                    "climate_zone": "暖温带大陆性季风气候",
+                    "url": "images\\cd1f62f60945450996d34f4e05043351.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        112.46,
+                        34.67
+                    ]
+                },
+                "properties": {
+                    "name": "夏朝斟鄩/洛阳",
+                    "description": "夏朝中晚期都城，位于今河南省偃师市二里头遗址；东周、东汉、曹魏、西晋都城",
+                    "year": "约公元前1900年-公元317年",
+                    "spot_type": "AncientCapital",
+                    "historical_significance": "二里头文化遗址，被认为是夏朝都城遗址；十三朝古都",
+                    "terrain": "山间盆地",
+                    "climate_zone": "暖温带大陆性季风气候",
+                    "terrain_features": [
+                        "邙山屏障",
+                        "伊洛河谷",
+                        "黄河天险"
+                    ],
+                    "spatial_importance": "中原腹地，东西交通枢纽",
+                    "url": "images\\e21d6f0670304fadb9941f4c5f51c8cd.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        114.65,
+                        34.38
+                    ]
+                },
+                "properties": {
+                    "name": "商朝亳",
+                    "description": "商朝早期都城，位于今河南省商丘市",
+                    "year": "约公元前1600年",
+                    "spot_type": "AncientCapital",
+                    "historical_significance": "商汤灭夏后建立的第一个商朝都城",
+                    "url": "images\\9bd802f15310419e96e9fbb4b3f22d2f.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        114.3,
+                        36.1
+                    ]
+                },
+                "properties": {
+                    "name": "商朝殷",
+                    "description": "商朝晚期都城，位于今河南省安阳市殷墟",
+                    "year": "约公元前1300年",
+                    "spot_type": "AncientCapital",
+                    "historical_significance": "商朝后期273年的政治中心，甲骨文发现地",
+                    "url": "images\\f24471f1a0b644e4958cab9712c74e5c.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        108.905,
+                        34.29
+                    ]
+                },
+                "properties": {
+                    "name": "西周镐京/秦朝咸阳/西汉长安/隋朝大兴城/唐朝长安",
+                    "description": "西周、秦、西汉、隋、唐都城，位于今陕西省西安市及咸阳市",
+                    "year": "公元前1046年-公元907年",
+                    "spot_type": "AncientCapital",
+                    "historical_significance": "周秦汉唐政治中心，丝绸之路起点，世界历史上规模最大的城市之一",
+                    "terrain": "渭河冲积平原",
+                    "climate_zone": "暖温带半湿润季风气候",
+                    "terrain_features": [
+                        "渭河阶地",
+                        "黄土台塬",
+                        "秦岭北麓"
+                    ],
+                    "spatial_importance": "关中四塞：东潼关、西散关、南武关、北萧关",
+                    "url": "images\\606eaa438ae6423aa94636661f587213.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        104.07,
+                        30.67
+                    ]
+                },
+                "properties": {
+                    "name": "蜀汉成都",
+                    "description": "三国蜀汉都城，位于今四川省成都市",
+                    "year": "公元221年",
+                    "spot_type": "AncientCapital",
+                    "historical_significance": "刘备建立的蜀汉政权都城",
+                    "url": "images\\ad7444d914eb4ffb98e93a50a6659fba.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        118.78,
+                        32.04
+                    ]
+                },
+                "properties": {
+                    "name": "东吴建业/东晋建康/明朝南京",
+                    "description": "三国东吴、东晋、明朝初期都城，位于今江苏省南京市",
+                    "year": "公元229年-1368年",
+                    "spot_type": "AncientCapital",
+                    "historical_significance": "孙权建立的东吴政权都城；衣冠南渡后建立的东晋都城；明太祖朱元璋建立的明朝初期都城",
+                    "terrain": "低山丘陵",
+                    "climate_zone": "亚热带季风气候",
+                    "terrain_features": [
+                        "紫金山",
+                        "玄武湖",
+                        "秦淮河"
+                    ],
+                    "spatial_importance": "长江天险，江南门户",
+                    "url": "images\\18af55596f5c4f4da6859b1346ff50e1.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        114.35,
+                        34.8
+                    ]
+                },
+                "properties": {
+                    "name": "北宋东京汴梁",
+                    "description": "北宋都城，位于今河南省开封市",
+                    "year": "公元960年",
+                    "spot_type": "AncientCapital",
+                    "historical_significance": "北宋政治经济文化中心，《清明上河图》描绘地",
+                    "url": "images\\0776165d670542b6af5d93db4a65b0ca.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        120.155,
+                        30.25
+                    ]
+                },
+                "properties": {
+                    "name": "南宋临安",
+                    "description": "南宋都城，位于今浙江省杭州市",
+                    "year": "公元1127年",
+                    "spot_type": "AncientCapital",
+                    "historical_significance": "南宋偏安政权都城，江南文化中心",
+                    "terrain": "河口平原",
+                    "climate_zone": "亚热带季风气候",
+                    "terrain_features": [
+                        "西湖",
+                        "钱塘江",
+                        "天目山余脉"
+                    ],
+                    "spatial_importance": "京杭大运河南端，东南沿海枢纽",
+                    "url": "images\\589dc13618aa41778d59446944f62757.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        116.4,
+                        39.91
+                    ]
+                },
+                "properties": {
+                    "name": "元朝大都/明朝北京/清朝北京",
+                    "description": "元、明、清三朝都城，位于今北京市",
+                    "year": "公元1271年-1912年",
+                    "spot_type": "AncientCapital",
+                    "historical_significance": "蒙古帝国及元朝都城，现代北京的前身；明成祖朱棣迁都后的明朝政治中心；清朝入关后的都城，中国最后一个封建王朝都城",
+                    "terrain": "冲积平原",
+                    "climate_zone": "暖温带半湿润大陆性季风气候",
+                    "terrain_features": [
+                        "永定河冲积扇",
+                        "燕山山脉",
+                        "太行山余脉"
+                    ],
+                    "spatial_importance": "华北平原与北方草原过渡带",
+                    "url": "images\\51c779f5bbe14525895b26eef7ba0198.jpeg"
+                }
+            }
+        ]
+    }
+}

@@ -532,7 +532,7 @@
                     
                     // 检查是否有有效的本地图片URL
                     const imageUrl = feature.properties?.url;
-                    let geometry, style;
+                    let geometry, style, olFeature;
                     
                     if (imageUrl ) {
                         // 如果有有效的本地图片路径，使用图片样式
@@ -546,14 +546,44 @@
                             )
                         );
                         
-                        
-                        style = new ol.style.Style({
-                            image: new ol.style.Icon({
-                                src: './' + imageUrl,
-                                scale: 0.03,
-                                anchor: [0.5, 1]
+                        // 先创建点样式作为默认样式
+                        const defaultStyle = new ol.style.Style({
+                            image: new ol.style.Circle({
+                                radius: 6,
+                                fill: new ol.style.Fill({
+                                    color: 'rgba(255, 0, 0, 0.6)'
+                                }),
+                                stroke: new ol.style.Stroke({
+                                    color: 'red',
+                                    width: 2
+                                })
                             })
                         });
+
+                        olFeature = new ol.Feature({
+                            geometry: geometry,
+                            name: feature.properties.name || '未命名',
+                            originalData: feature // 存储原始数据，用于点击时显示详细信息
+                        });
+                        
+                        // 设置初始样式为点样式
+                        olFeature.setStyle(defaultStyle);
+                        
+                        // 预加载图片，加载完成后切换为图片样式
+                        const img = new Image();
+                        img.onload = function() {
+                            const imageStyle = new ol.style.Style({
+                                image: new ol.style.Icon({
+                                    src: './' + imageUrl,
+                                    scale: 0.03,
+                                    anchor: [0.5, 1]
+                                })
+                            });
+                            olFeature.setStyle(imageStyle);
+                        };
+                        img.src = './' + imageUrl;
+                        
+                        style = defaultStyle;
                     } else {
                         // 如果没有图片URL或URL无效，使用默认的点样式
                         console.log(`要素 ${index} 未提供有效图片URL，使用默认样式`);
@@ -562,7 +592,7 @@
                                 feature.geometry.coordinates || [0, 0]
                             )
                         );
-                        
+
                         style = new ol.style.Style({
                             image: new ol.style.Circle({
                                 radius: 6,
@@ -575,16 +605,15 @@
                                 })
                             })
                         });
+
+                        olFeature = new ol.Feature({
+                            geometry: geometry,
+                            name: feature.properties.name || '未命名',
+                            originalData: feature
+                        });
+
+                        olFeature.setStyle(style);
                     }
-                    
-                    const olFeature = new ol.Feature({
-                        geometry: geometry,
-                        name: feature.properties.name || '未命名',
-                        originalData: feature // 存储原始数据，用于点击时显示详细信息
-                    });
-                    
-                    // 设置样式
-                    olFeature.setStyle(style);
 
                     console.log(`OpenLayers要素 ${index} 创建完成:`, olFeature.getProperties());
                     return olFeature;

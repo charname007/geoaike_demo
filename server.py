@@ -55,7 +55,10 @@ async def lifespan(app: FastAPI):
     )
 
     logger.info("系统启动完成")
-
+    logger.info(
+        "Server started at http://{}:{}".format(SERVER_CONFIG['host'], SERVER_CONFIG['port']))
+    logger.info("访问地图页面：http://{}:{}/Map_Page".format(
+        SERVER_CONFIG['host'], SERVER_CONFIG['port']))
     yield
 
     # 关闭时清理
@@ -118,7 +121,6 @@ async def collect_map_data(user_prompt: str):
                           f, ensure_ascii=False, indent=4)
                 logger.info(f"Map data cached to {cache_filename}")
 
-
         return result
     except Exception as e:
         logger.error(f"Error during map data collection: {str(e)}")
@@ -152,6 +154,7 @@ async def get_map_page():
 # ==================== 启动服务 ====================
 
 if __name__ == "__main__":
+
     uvicorn.run(
         'server:app',
         host=SERVER_CONFIG['host'],
@@ -159,7 +162,3 @@ if __name__ == "__main__":
         reload=True,
         log_level=SERVER_CONFIG.get('log_level', 'info').lower()
     )
-    logger.info(
-        "Server started at http://{}:{}".format(SERVER_CONFIG['host'], SERVER_CONFIG['port']))
-    logger.info("访问地图页面：http://{}:{}/Map_Page".format(
-        SERVER_CONFIG['host'], SERVER_CONFIG['port']))

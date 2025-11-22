@@ -12,7 +12,9 @@ from m_agents import *
 
 from langchain_core.messages import AIMessageChunk
 
-from text_imager import generate_symbol_image, download_image
+# from text_imager import generate_symbol_image, download_image
+import asyncio
+from text_imager import process_features_async
 retry_count=10
 
 
@@ -252,9 +254,11 @@ def validator_synthesizer_node(state: AgentState) -> OutputState:
 #     return response
 
 
-#文生图节点
-def text2imager(state: OutputState) -> OutputState:
-    """文生图节点：为每个地理特征生成符号图像"""
+#文生图节点（异步版本）
+async def text2imager(state: OutputState) -> OutputState:
+    """文生图节点：并行为每个地理特征生成符号图像"""
+
+    
     final_results = state.get("final_results")
     if not final_results:
         raise ValueError("final_results is required for text2imager.")
@@ -263,38 +267,10 @@ def text2imager(state: OutputState) -> OutputState:
     if not map_data or not hasattr(map_data, 'features'):
         raise ValueError("map_data with features is required for text2imager.")
     
-    for feature in map_data.features:
-        # 提取properties作为描述
-        description = ""
-        if feature.properties:
-            # 将properties转换为描述字符串
-            desc_parts = []
-            for key, value in feature.properties.items():
-                if value:
-                    desc_parts.append(f"{key}: {value}")
-            description = ", ".join(desc_parts)
-        
-        if not description:
-            description = "地理特征符号"
-        
-        try:
-            # 生成图片
-            image_url = generate_symbol_image(description)
-            
-            # 下载图片到本地
-            local_path = download_image(image_url)
-            
-            # 将本地图片路径作为url属性添加到feature的properties中
-            if not feature.properties:
-                feature.properties = {}
-            feature.properties["url"] = local_path
-            
-            logger.info(f"为特征生成图片完成: {description} -> {local_path}")
-            
-        except Exception as e:
-            logger.error(f"为特征生成图片失败: {description}, 错误: {e}")
-            # 继续处理下一个特征
-            continue
+    features = list(map_data.features)
+    
+    # 在当前事件循环中运行异步代码
+    await process_features_async(features)
     
     return {"final_results": final_results}
 
