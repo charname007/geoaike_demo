@@ -45,15 +45,16 @@ system_prompt = '''你是一个符号设计专家，你能根据用户提供的�
 # )
 
 # print(imagesResponse.data[0].url)
-def build_image_prompt(location_description: str) -> str:
+def build_image_prompt(location_description: str,theme: str) -> str:
     prompt = f"""{system_prompt}
     请根据以下地点描述，生成符号设计图像的提示词：
     地点描述：{location_description}
+    主题：{theme}
     符号设计图像提示词："""
     return prompt
 
-def generate_symbol_image(location_description: str):
-    prompt = build_image_prompt(location_description)
+def generate_symbol_image(location_description: str,theme: str) -> str:
+    prompt = build_image_prompt(location_description, theme)
     imagesResponse = client.images.generate(
         model=DOUBAO_CONFIG['image_model'],
         prompt=prompt,
@@ -142,7 +143,7 @@ async def download_image_async(image_url: str) -> str:
         raise
 
 # 异步版本的图片生成（包装同步API调用）
-async def generate_symbol_image_async(location_description: str) -> str:
+async def generate_symbol_image_async(location_description: str, theme: str) -> str:
     """异步包装同步的图片生成API调用"""
     import concurrent.futures
     
@@ -152,11 +153,12 @@ async def generate_symbol_image_async(location_description: str) -> str:
         return await loop.run_in_executor(
             executor,
             generate_symbol_image,  # 原来的同步函数
-            location_description
+            location_description,
+            theme
         )
 
 # 异步处理单个特征
-async def process_single_feature_async(feature) -> tuple:
+async def process_single_feature_async(feature, theme: str) -> tuple:
     """异步处理单个特征
     
     Returns:
@@ -176,7 +178,7 @@ async def process_single_feature_async(feature) -> tuple:
     
     try:
         # 异步生成图片
-        image_url = await generate_symbol_image_async(description)
+        image_url = await generate_symbol_image_async(description, theme)
         
         # 异步下载图片
         local_path = await download_image_async(image_url)
@@ -194,10 +196,10 @@ async def process_single_feature_async(feature) -> tuple:
         return feature, description, None
 
 # 异步批处理所有特征
-async def process_features_async(features):
+async def process_features_async(features,theme:str) -> list:
     """异步批处理所有特征"""
     # 创建所有异步任务
-    tasks = [process_single_feature_async(feature) for feature in features]
+    tasks = [process_single_feature_async(feature, theme) for feature in features]
     
     # 并发执行所有任务
     results = await asyncio.gather(*tasks, return_exceptions=True)
@@ -212,6 +214,6 @@ async def process_features_async(features):
 
 if __name__ == "__main__":
     test_description = "长城，蜿蜒在群山之间，象征着中国古代的军事防御工程和文化遗产"
-    image_url = generate_symbol_image(test_description)
+    image_url = generate_symbol_image(test_description,"长城符号")
     local_image_path = download_image(image_url)
     logger.info(f"生成的图片已保存到: {local_image_path}")

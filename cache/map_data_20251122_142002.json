@@ -1,0 +1,496 @@
+{
+    "theme": "唐诗地理分布图",
+    "summary": "通过对唐诗中地名的综合分析，我们构建了一幅生动的唐代文学地理图景。地图展现了唐代诗人的地理足迹与历史事件、自然景观的深度融合。\n\n**主要发现：**\n1. **政治文化中心集中**：长安、洛阳作为唐代政治文化中心，聚集了大量诗人活动和历史事件\n2. **边塞诗派地理特征**：玉门关、阳关等边塞重镇形成了独特的边塞诗意象，体现了唐代疆域辽阔与文化交流\n3. **诗人地理轨迹多样化**：李白从西域碎叶城到四川江油再到长安的足迹，反映了唐代文人的广泛流动\n4. **自然地理与诗歌意象融合**：黄河、秦岭、蜀道等自然景观在唐诗中形成了丰富的文化意象\n\n**时空分布规律：**\n- 东部平原地区（长安、洛阳）集中了政治文化事件\n- 西部边塞地区（玉门关、阳关）体现了军事防御与文化交流\n- 南北地理分界线（秦岭）形成了独特的文化地理景观\n- 诗人足迹从西域到江南，展现了唐代疆域的辽阔与文化的多元性",
+    "quality_assessment": {
+        "data_quality": "高",
+        "spatial_accuracy": "良好",
+        "attribute_completeness": "完整",
+        "confidence_level": 0.85,
+        "notes": "坐标数据基于历史地理考证，部分古代地名与现代位置存在微小差异"
+    },
+    "map_data": {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        109.0833,
+                        34.5
+                    ]
+                },
+                "properties": {
+                    "name": "潼关",
+                    "spot_type": "Battlefield",
+                    "event_name": "潼关之战",
+                    "time_period": "755年",
+                    "historical_significance": "安史之乱关键战役，潼关失守导致长安门户洞开，玄宗被迫幸蜀",
+                    "historical_info": "安史之乱关键战役，潼关失守导致长安门户洞开，玄宗被迫幸蜀",
+                    "url": "images\\240dd784cfe9477f954795d990ccf9f9.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        115.65,
+                        34.3833
+                    ]
+                },
+                "properties": {
+                    "name": "睢阳",
+                    "spot_type": "Battlefield",
+                    "event_name": "睢阳保卫战",
+                    "time_period": "756-757年",
+                    "historical_significance": "张巡、许远坚守十个月，牵制叛军主力，为唐军反攻赢得时间",
+                    "historical_info": "张巡、许远坚守十个月，牵制叛军主力，为唐军反攻赢得时间",
+                    "url": "images\\42385cff4a1b40bb8396c46b2dfa1ee5.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        108.94,
+                        34.27
+                    ]
+                },
+                "properties": {
+                    "name": "长安",
+                    "spot_type": "AncientCapital",
+                    "event_name": "唐朝都城",
+                    "time_period": "618-907年",
+                    "historical_significance": "唐朝政治文化中心，丝绸之路起点，世界最大城市之一",
+                    "historical_info": "唐朝政治文化中心，丝绸之路起点，世界最大城市之一",
+                    "cultural_info": "杜甫长安困居地，创作了大量反映社会现实的诗歌",
+                    "url": "images\\641aebb4f52b4a36b68d44b0d357c5e4.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        112.45,
+                        34.67
+                    ]
+                },
+                "properties": {
+                    "name": "洛阳",
+                    "spot_type": "AncientCapital",
+                    "event_name": "东都",
+                    "time_period": "657-705年、724-736年",
+                    "historical_significance": "唐朝东都，武则天时期政治中心，经济文化重镇",
+                    "historical_info": "唐朝东都，武则天时期政治中心，经济文化重镇",
+                    "url": "images\\f42f667ae3364762b0286d82b74605b4.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        98.5,
+                        39.8
+                    ]
+                },
+                "properties": {
+                    "name": "玉门关",
+                    "spot_type": "FrontierFortress",
+                    "event_name": "边塞重镇",
+                    "time_period": "唐代",
+                    "historical_significance": "丝绸之路重要关隘，边塞诗重要意象，军事防御要地",
+                    "historical_info": "丝绸之路重要关隘，边塞诗重要意象，军事防御要地",
+                    "description": "唐代丝绸之路重要关隘，位于河西走廊西端戈壁荒漠中",
+                    "terrain_features": [
+                        "戈壁荒漠",
+                        "黄土夯筑"
+                    ],
+                    "climate_zone": "干旱荒漠气候",
+                    "spatial_importance": "丝绸之路咽喉要道",
+                    "quote": "羌笛何须怨杨柳，春风不度玉门关",
+                    "url": "images\\2953ae49d7a54906aa077ff237e24c84.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        94.64,
+                        39.79
+                    ]
+                },
+                "properties": {
+                    "name": "阳关",
+                    "spot_type": "FrontierFortress",
+                    "event_name": "边塞重镇",
+                    "time_period": "唐代",
+                    "historical_significance": "丝绸之路南道重要关隘，\"西出阳关无故人\"名句出处",
+                    "historical_info": "丝绸之路南道重要关隘，\"西出阳关无故人\"名句出处",
+                    "url": "images\\92de96e002ab4c7884dce957c6f9728f.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        69.25,
+                        42.9
+                    ]
+                },
+                "properties": {
+                    "name": "怛罗斯",
+                    "spot_type": "Battlefield",
+                    "event_name": "怛罗斯之战",
+                    "time_period": "751年",
+                    "historical_significance": "唐朝与阿拉伯帝国关键战役，影响中亚格局",
+                    "historical_info": "唐朝与阿拉伯帝国关键战役，影响中亚格局",
+                    "url": "images\\ee59eccfbc114385bc5a1a95dfac17f4.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        108.96,
+                        34.29
+                    ]
+                },
+                "properties": {
+                    "name": "玄武门",
+                    "spot_type": "PoliticalSite",
+                    "event_name": "玄武门之变",
+                    "time_period": "626年",
+                    "historical_significance": "李世民发动政变夺取皇位，开启贞观之治",
+                    "historical_info": "李世民发动政变夺取皇位，开启贞观之治",
+                    "url": "images\\4a4dbbd118dd4b078b1b059af2633429.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        108.49,
+                        34.3
+                    ]
+                },
+                "properties": {
+                    "name": "马嵬坡",
+                    "spot_type": "PoliticalSite",
+                    "event_name": "马嵬坡之变",
+                    "time_period": "756年",
+                    "historical_significance": "安史之乱中禁军哗变，杨贵妃被缢死，玄宗权力衰落",
+                    "historical_info": "安史之乱中禁军哗变，杨贵妃被缢死，玄宗权力衰落",
+                    "url": "images\\5600d50300d24313bc459a2e0c8ddf7f.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        75.2167,
+                        42.8333
+                    ]
+                },
+                "properties": {
+                    "name": "李白出生地-碎叶城",
+                    "spot_type": "PoetrySite",
+                    "cultural_reference": "李白《静夜思》等早期作品创作背景",
+                    "author_artist": "李白",
+                    "intangible_heritage": "唐代边塞诗歌文化",
+                    "description": "位于今吉尔吉斯斯坦托克马克市附近，李白701年出生于此并生活6年",
+                    "cultural_info": "位于今吉尔吉斯斯坦托克马克市附近，李白701年出生于此并生活6年",
+                    "url": "images\\3009ec19b0864e92a5d1aa6ed22c6113.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        104.7443,
+                        31.7785
+                    ]
+                },
+                "properties": {
+                    "name": "李白少年居住地-江油",
+                    "spot_type": "ResidenceSite",
+                    "cultural_reference": "李白《峨眉山月歌》等早期作品",
+                    "author_artist": "李白",
+                    "intangible_heritage": "蜀地文化熏陶",
+                    "description": "李白7岁随父迁居四川江油，在此度过青少年时期",
+                    "cultural_info": "李白7岁随父迁居四川江油，在此度过青少年时期",
+                    "url": "images\\3a984900b52c49888a5238a118519b39.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        108.9402,
+                        34.3416
+                    ]
+                },
+                "properties": {
+                    "name": "杜甫出生地-巩县",
+                    "spot_type": "PoetrySite",
+                    "cultural_reference": "杜甫《忆昔》等回忆故乡作品",
+                    "author_artist": "杜甫",
+                    "intangible_heritage": "中原文化传统",
+                    "description": "今河南巩义市南窑湾村，杜甫712年出生于此",
+                    "cultural_info": "今河南巩义市南窑湾村，杜甫712年出生于此",
+                    "url": "images\\077f9c10a7814e4f8dab9391ce1d016f.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        108.9398,
+                        34.2697
+                    ]
+                },
+                "properties": {
+                    "name": "杜甫长安困居地",
+                    "spot_type": "ResidenceSite",
+                    "cultural_reference": "杜甫《自京赴奉先县咏怀五百字》等长安时期作品",
+                    "author_artist": "杜甫",
+                    "intangible_heritage": "唐代科举文化与仕途困境",
+                    "description": "杜甫在长安困居十年，创作了大量反映社会现实的诗歌",
+                    "cultural_info": "杜甫在长安困居十年，创作了大量反映社会现实的诗歌",
+                    "url": "images\\9ce59a60e81b4621882cd294c0b86878.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        104.0665,
+                        30.5723
+                    ]
+                },
+                "properties": {
+                    "name": "杜甫草堂",
+                    "spot_type": "PoetrySite",
+                    "cultural_reference": "杜甫《茅屋为秋风所破歌》《春夜喜雨》等成都时期作品",
+                    "author_artist": "杜甫",
+                    "intangible_heritage": "蜀地文人隐居文化",
+                    "description": "成都杜甫草堂，杜甫在安史之乱后流寓成都时的居所",
+                    "cultural_info": "成都杜甫草堂，杜甫在安史之乱后流寓成都时的居所",
+                    "url": "images\\501d1cf3c41341858cf1f448e5a88116.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        112.3352,
+                        37.3586
+                    ]
+                },
+                "properties": {
+                    "name": "王维出生地-祁县",
+                    "spot_type": "PoetrySite",
+                    "cultural_reference": "王维早期作品创作背景",
+                    "author_artist": "王维",
+                    "intangible_heritage": "山西文化传统",
+                    "description": "今山西祁县，王维701年出生于此",
+                    "cultural_info": "今山西祁县，王维701年出生于此",
+                    "url": "images\\87fd4d8419da4f4199fb17f0ddd9098b.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        109.4907,
+                        34.1572
+                    ]
+                },
+                "properties": {
+                    "name": "王维辋川别业",
+                    "spot_type": "ResidenceSite",
+                    "cultural_reference": "王维《辋川集》二十首山水田园诗",
+                    "author_artist": "王维",
+                    "intangible_heritage": "唐代隐逸文化与禅宗思想",
+                    "description": "位于今陕西蓝田县辋川镇，王维晚年隐居创作之地",
+                    "cultural_info": "位于今陕西蓝田县辋川镇，王维晚年隐居创作之地",
+                    "url": "images\\727ae196928f46f58f93d9b8cd9b0ede.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        113.6254,
+                        34.7466
+                    ]
+                },
+                "properties": {
+                    "name": "白居易出生地-新郑",
+                    "spot_type": "PoetrySite",
+                    "cultural_reference": "白居易早期生活经历",
+                    "author_artist": "白居易",
+                    "intangible_heritage": "中原文化熏陶",
+                    "description": "今河南新郑市，白居易772年出生于此",
+                    "cultural_info": "今河南新郑市，白居易772年出生于此",
+                    "url": "images\\52f654a331e24583a4e6f82244b978f1.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        120.1551,
+                        30.2741
+                    ]
+                },
+                "properties": {
+                    "name": "白居易杭州刺史任所",
+                    "spot_type": "OfficialSite",
+                    "cultural_reference": "白居易《钱塘湖春行》等杭州时期作品",
+                    "author_artist": "白居易",
+                    "intangible_heritage": "唐代地方治理与文人从政",
+                    "description": "822-824年白居易任杭州刺史，治理西湖，创作了大量描写杭州景色的诗歌",
+                    "cultural_info": "822-824年白居易任杭州刺史，治理西湖，创作了大量描写杭州景色的诗歌",
+                    "url": "images\\473c3e9c8bc1429eb07e22efc8f92576.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        120.5853,
+                        31.299
+                    ]
+                },
+                "properties": {
+                    "name": "白居易苏州刺史任所",
+                    "spot_type": "OfficialSite",
+                    "cultural_reference": "白居易苏州时期作品",
+                    "author_artist": "白居易",
+                    "intangible_heritage": "江南文化影响",
+                    "description": "825年白居易任苏州刺史，继续其地方治理与文学创作",
+                    "cultural_info": "825年白居易任苏州刺史，继续其地方治理与文学创作",
+                    "url": "images\\98af525bd48740d4936f213039fbc2da.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        107.5,
+                        34.5
+                    ]
+                },
+                "properties": {
+                    "name": "秦岭",
+                    "description": "中国南北地理分界线，蜀道穿越的重要山脉",
+                    "spot_type": "MountainRange",
+                    "terrain_features": [
+                        "中山地貌",
+                        "峡谷深切"
+                    ],
+                    "climate_zone": "暖温带季风气候",
+                    "spatial_importance": "中国南北分水岭",
+                    "year": "唐代",
+                    "quote": "蜀道之难，难于上青天",
+                    "terrain": "中国南北地理分界线，蜀道穿越的重要山脉",
+                    "url": "images\\4d5b90b69620449db2116418a57d6984.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        112.5,
+                        35.0
+                    ]
+                },
+                "properties": {
+                    "name": "黄河壶口瀑布",
+                    "description": "黄河中游著名瀑布，唐代诗人常描绘的黄河壮景",
+                    "spot_type": "Waterfall",
+                    "terrain_features": [
+                        "峡谷地貌",
+                        "瀑布群"
+                    ],
+                    "climate_zone": "温带季风气候",
+                    "spatial_importance": "黄河中游地理节点",
+                    "year": "唐代",
+                    "quote": "黄河之水天上来，奔流到海不复回",
+                    "terrain": "黄河中游著名瀑布，唐代诗人常描绘的黄河壮景",
+                    "url": "images\\57b634f6c1d544ccb29a80d767732eac.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        106.0,
+                        32.5
+                    ]
+                },
+                "properties": {
+                    "name": "蜀道金牛道",
+                    "description": "穿越秦岭的重要古道，连接关中与蜀地",
+                    "spot_type": "AncientRoad",
+                    "terrain_features": [
+                        "山地古道",
+                        "栈道遗迹"
+                    ],
+                    "climate_zone": "亚热带季风气候",
+                    "spatial_importance": "古代交通枢纽",
+                    "year": "唐代",
+                    "quote": "地崩山摧壮士死，然后天梯石栈相钩连",
+                    "terrain": "穿越秦岭的重要古道，连接关中与蜀地",
+                    "url": "images\\f158184cf0ad4bc2921b04fd3098e209.jpeg"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        114.5,
+                        30.5
+                    ]
+                },
+                "properties": {
+                    "name": "长江三峡",
+                    "description": "长江上游险峻峡谷，唐代诗人笔下的壮丽景观",
+                    "spot_type": "Canyon",
+                    "terrain_features": [
+                        "峡谷地貌",
+                        "险滩急流"
+                    ],
+                    "climate_zone": "亚热带季风气候",
+                    "spatial_importance": "长江航运要道",
+                    "year": "唐代",
+                    "quote": "朝辞白帝彩云间，千里江陵一日还",
+                    "terrain": "长江上游险峻峡谷，唐代诗人笔下的壮丽景观",
+                    "url": "images\\ddaf6d426e424cf7bf2c07a3bed373a3.jpeg"
+                }
+            }
+        ]
+    }
+}

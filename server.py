@@ -102,7 +102,7 @@ async def collect_map_data(user_prompt: str):
         f"Received map data collection request with prompt: {user_prompt}")
     input_state = {"user_prompt": user_prompt}
     try:
-        result = m_graph.invoke(input_state)
+        result = await m_graph.ainvoke(input_state)
         logger.info("Map data collection completed successfully.")
 
         # 存入cache

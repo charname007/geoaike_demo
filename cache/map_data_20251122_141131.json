@@ -1,0 +1,346 @@
+{
+    "theme": "唐诗地理分布图",
+    "summary": "通过对唐诗中地名的综合分析，我们构建了唐代诗歌创作的地理空间图谱。研究发现：\n\n**空间分布特征：**\n1. **政治文化中心集中**：长安（西安）和洛阳作为唐代两大都城，是诗歌创作的核心区域，体现了政治中心与文化创作的紧密联系\n2. **自然地理意象丰富**：庐山、黄山、长江、黄河等自然景观成为诗人重要的创作素材，反映了唐代文人对自然山水的审美追求\n3. **文化地标分布广泛**：从四川的杜甫草堂、李白故里，到江南的黄鹤楼、滕王阁、寒山寺，再到西北的玉门关、阳关，形成了覆盖全国的诗歌文化网络\n\n**文化地理规律：**\n- 边塞诗主要集中在丝绸之路沿线（玉门关、阳关），体现了唐代边疆开拓的历史背景\n- 山水诗多分布在长江流域和江南地区，反映了南方自然景观对诗歌创作的深刻影响\n- 怀古诗以历史遗迹为依托（如赤壁），展现了唐代文人的历史意识\n- 文化地标与诗人生活轨迹高度重合，形成了\"诗路\"文化走廊\n\n**时空交织特征：**唐代诗歌地理呈现出\"都城核心-自然环绕-文化网络\"的三重结构，既反映了政治权力的空间布局，也体现了文化传播的地理路径。",
+    "quality_assessment": {
+        "total_features": 16,
+        "spatial_accuracy": "高",
+        "data_completeness": "良好",
+        "attribute_integrity": "完整",
+        "confidence_level": 0.85
+    },
+    "map_data": {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        108.94,
+                        34.27
+                    ]
+                },
+                "properties": {
+                    "name": "长安城遗址",
+                    "description": "唐朝都城，政治文化中心",
+                    "year": "618-907年",
+                    "spot_type": "AncientCapital",
+                    "event_name": "唐朝都城",
+                    "time_period": "唐朝",
+                    "historical_significance": "世界最大都城之一，唐诗创作中心",
+                    "cultural_reference": "李白、杜甫等众多诗人曾在此生活创作",
+                    "terrain": "关中平原"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        112.45,
+                        34.62
+                    ]
+                },
+                "properties": {
+                    "name": "洛阳城遗址",
+                    "description": "唐朝东都，经济文化重镇",
+                    "year": "618-907年",
+                    "spot_type": "AncientCapital",
+                    "event_name": "唐朝东都",
+                    "time_period": "唐朝",
+                    "historical_significance": "丝绸之路起点之一，唐诗重要创作地",
+                    "cultural_reference": "\"洛阳亲友如相问，一片冰心在玉壶\"",
+                    "terrain": "伊洛河平原"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        93.85,
+                        40.35
+                    ]
+                },
+                "properties": {
+                    "name": "玉门关遗址",
+                    "description": "丝绸之路重要关隘",
+                    "year": "汉代-唐代",
+                    "spot_type": "FrontierFortress",
+                    "event_name": "边塞重镇",
+                    "time_period": "汉唐时期",
+                    "historical_significance": "丝绸之路咽喉要道，边塞诗重要意象",
+                    "cultural_reference": "\"羌笛何须怨杨柳，春风不度玉门关\"",
+                    "terrain": "戈壁荒漠"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        94.12,
+                        39.93
+                    ]
+                },
+                "properties": {
+                    "name": "阳关遗址",
+                    "description": "丝绸之路西出要道",
+                    "year": "汉代-唐代",
+                    "spot_type": "FrontierFortress",
+                    "event_name": "边塞关隘",
+                    "time_period": "汉唐时期",
+                    "historical_significance": "丝绸之路重要关口，离别诗重要意象",
+                    "cultural_reference": "\"劝君更尽一杯酒，西出阳关无故人\"",
+                    "terrain": "戈壁绿洲"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        113.895,
+                        29.728
+                    ]
+                },
+                "properties": {
+                    "name": "赤壁古战场",
+                    "description": "三国赤壁之战遗址",
+                    "year": "208年",
+                    "spot_type": "Battlefield",
+                    "event_name": "赤壁之战",
+                    "time_period": "三国时期",
+                    "historical_significance": "三国鼎立关键战役，怀古诗重要题材",
+                    "cultural_reference": "\"折戟沉沙铁未销，自将磨洗认前朝\"",
+                    "terrain": "长江沿岸"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        115.97,
+                        29.55
+                    ]
+                },
+                "properties": {
+                    "name": "庐山",
+                    "description": "唐代诗人李白《望庐山瀑布》等名篇描绘的著名山脉",
+                    "spot_type": "MountainPeak",
+                    "terrain_features": "地垒式断块山脉、冰川地貌",
+                    "climate_zone": "亚热带季风气候",
+                    "spatial_importance": "长江中游重要地理节点，连接鄱阳湖与长江",
+                    "cultural_reference": "李白《望庐山瀑布》\"飞流直下三千尺，疑是银河落九天\"",
+                    "historical_context": "唐代重要游览胜地"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        118.17,
+                        30.13
+                    ]
+                },
+                "properties": {
+                    "name": "黄山",
+                    "description": "唐代诗人李白《送温处士归黄山白鹅峰旧居》等诗作描绘的奇山",
+                    "spot_type": "MountainPeak",
+                    "terrain_features": "花岗岩峰林、奇松怪石",
+                    "climate_zone": "亚热带季风气候",
+                    "spatial_importance": "皖南山区核心地标，长江与钱塘江分水岭",
+                    "cultural_reference": "李白《送温处士归黄山白鹅峰旧居》",
+                    "historical_context": "唐代道教名山"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        116.0,
+                        29.5
+                    ]
+                },
+                "properties": {
+                    "name": "长江中游",
+                    "description": "唐代诗人李白《早发白帝城》、杜甫《登高》等描绘的长江三峡及中游段",
+                    "spot_type": "River",
+                    "terrain_features": "峡谷、平原、冲积地貌",
+                    "climate_zone": "亚热带季风气候",
+                    "spatial_importance": "中国东西向重要水路通道",
+                    "cultural_reference": "李白《早发白帝城》\"朝辞白帝彩云间，千里江陵一日还\"",
+                    "historical_context": "唐代重要航运通道"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        112.0,
+                        35.0
+                    ]
+                },
+                "properties": {
+                    "name": "黄河中游",
+                    "description": "唐代诗人王之涣《登鹳雀楼》等诗作描绘的黄河景观",
+                    "spot_type": "River",
+                    "terrain_features": "黄土高原、峡谷、冲积平原",
+                    "climate_zone": "温带季风气候",
+                    "spatial_importance": "中华文明发源地，连接西北与华北",
+                    "cultural_reference": "王之涣《登鹳雀楼》\"白日依山尽，黄河入海流\"",
+                    "historical_context": "唐代北方重要水系"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        112.8,
+                        29.2
+                    ]
+                },
+                "properties": {
+                    "name": "洞庭湖",
+                    "description": "唐代诗人孟浩然《望洞庭湖赠张丞相》等描绘的著名湖泊",
+                    "spot_type": "Lake",
+                    "terrain_features": "冲积平原、湿地、湖滨平原",
+                    "climate_zone": "亚热带季风气候",
+                    "spatial_importance": "长江中游重要调蓄湖泊，连接湘江与长江",
+                    "cultural_reference": "孟浩然《望洞庭湖赠张丞相》\"气蒸云梦泽，波撼岳阳城\"",
+                    "historical_context": "唐代重要渔业基地"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        120.15,
+                        30.25
+                    ]
+                },
+                "properties": {
+                    "name": "西湖",
+                    "description": "唐代诗人白居易《钱塘湖春行》等描绘的著名湖泊",
+                    "spot_type": "Lake",
+                    "terrain_features": "人工疏浚湖泊、三面环山",
+                    "climate_zone": "亚热带季风气候",
+                    "spatial_importance": "江南水乡文化代表，杭州城市核心景观",
+                    "cultural_reference": "白居易《钱塘湖春行》\"最爱湖东行不足，绿杨阴里白沙堤\"",
+                    "historical_context": "唐代杭州刺史白居易主持疏浚"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        104.033,
+                        30.65
+                    ]
+                },
+                "properties": {
+                    "name": "杜甫草堂",
+                    "description": "诗圣杜甫流寓成都时的故居，公元759年冬为避安史之乱而建",
+                    "spot_type": "PoetResidence",
+                    "cultural_reference": "杜甫在此创作240余首诗歌",
+                    "author_artist": "杜甫",
+                    "intangible_heritage": "唐代现实主义诗歌创作传统",
+                    "year": 759,
+                    "terrain": "浣花溪畔",
+                    "historical_significance": "唐代现实主义诗歌重要创作基地"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        104.75,
+                        31.78
+                    ]
+                },
+                "properties": {
+                    "name": "李白故里",
+                    "description": "诗仙李白的出生地，位于四川江油市",
+                    "spot_type": "PoetBirthplace",
+                    "cultural_reference": "李白出生地和早期创作地",
+                    "author_artist": "李白",
+                    "intangible_heritage": "唐代浪漫主义诗歌源头",
+                    "year": 701,
+                    "terrain": "涪江流域",
+                    "historical_significance": "诗仙李白文化发源地"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        114.3,
+                        30.55
+                    ]
+                },
+                "properties": {
+                    "name": "黄鹤楼",
+                    "description": "位于武汉蛇山之巅，濒临长江，被誉为\"天下江山第一楼\"",
+                    "spot_type": "PoetrySite",
+                    "cultural_reference": "崔颢《黄鹤楼》\"昔人已乘黄鹤去，此地空余黄鹤楼\"",
+                    "author_artist": "崔颢",
+                    "intangible_heritage": "江南三大名楼文化",
+                    "year": 223,
+                    "terrain": "长江之滨",
+                    "historical_significance": "唐代重要文化地标"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        115.88,
+                        28.68
+                    ]
+                },
+                "properties": {
+                    "name": "滕王阁",
+                    "description": "位于南昌赣江东岸，始建于唐永徽四年（653年）",
+                    "spot_type": "PoetrySite",
+                    "cultural_reference": "王勃《滕王阁序》\"落霞与孤鹜齐飞，秋水共长天一色\"",
+                    "author_artist": "王勃",
+                    "intangible_heritage": "江南三大名楼文化",
+                    "year": 653,
+                    "terrain": "赣江之畔",
+                    "historical_significance": "唐代重要文学创作地"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        120.6,
+                        31.32
+                    ]
+                },
+                "properties": {
+                    "name": "寒山寺",
+                    "description": "苏州著名古寺，因张继《枫桥夜泊》而闻名天下",
+                    "spot_type": "TemplePoetrySite",
+                    "cultural_reference": "张继《枫桥夜泊》\"姑苏城外寒山寺，夜半钟声到客船\"",
+                    "author_artist": "张继",
+                    "intangible_heritage": "唐代寺庙钟声文化",
+                    "year": 502,
+                    "terrain": "京杭大运河畔",
+                    "historical_significance": "唐代著名寺庙诗歌创作地"
+                }
+            }
+        ]
+    }
+}

@@ -5,7 +5,7 @@ from langchain_openai import ChatOpenAI
 from langchain.agents import create_agent
 from search_tool import search_tools
 from m_prompt import *
-from langgraph.checkpoint.memory import InMemorySaver
+# from langgraph.checkpoint.memory import InMemorySaver
 from langchain.agents.middleware import wrap_tool_call
 from langchain.messages import ToolMessage
 from langchain.agents.structured_output import ToolStrategy, ProviderStrategy
@@ -36,7 +36,7 @@ orchestrator_agent = create_agent(
     model=llm,
     tools=search_tools,
     system_prompt=get_orchestrator_prompt(),
-    checkpointer=InMemorySaver(),
+    # checkpointer=InMemorySaver(),
     middleware=[handle_tool_errors],
     response_format=OrchestratorResponse,
     name="OrchestratorAgent"
@@ -46,7 +46,7 @@ historical_researcher_agent = create_agent(
     model=llm,
     tools=search_tools,
     system_prompt=get_historical_researcher_prompt(),
-    checkpointer=InMemorySaver(),
+    # checkpointer=InMemorySaver(),
     middleware=[handle_tool_errors],
     response_format=HistoricalResearcherResponse,
     name="HistoricalResearcherAgent"
@@ -56,7 +56,7 @@ geographical_researcher_agent = create_agent(
     model=llm,
     tools=search_tools,
     system_prompt=get_geographical_researcher_prompt(),
-    checkpointer=InMemorySaver(),
+    # checkpointer=InMemorySaver(),
     middleware=[handle_tool_errors],
     response_format=GeographicalResearcherResponse,
     name="GeographicalResearcherAgent"
@@ -66,7 +66,7 @@ cultural_researcher_agent = create_agent(
     model=llm,
     tools=search_tools,
     system_prompt=get_cultural_researcher_prompt(),
-    checkpointer=InMemorySaver(),
+    # checkpointer=InMemorySaver(),
     middleware=[handle_tool_errors],
     response_format=CulturalResearcherResponse,
     name="CulturalResearcherAgent"
@@ -76,7 +76,7 @@ scientific_researcher_agent = create_agent(
     model=llm,
     tools=search_tools,
     system_prompt=get_scientific_researcher_prompt(),
-    checkpointer=InMemorySaver(),
+    # checkpointer=InMemorySaver(),
     middleware=[handle_tool_errors],
     response_format=ScientificResearcherResponse,
     name="ScientificResearcherAgent"
@@ -86,7 +86,7 @@ validator_synthesizer_agent = create_agent(
     model=llm,  
     tools=search_tools,
     system_prompt=get_validator_synthesizer_prompt(),
-    checkpointer=InMemorySaver(),
+    # checkpointer=InMemorySaver(),
     middleware=[handle_tool_errors],
     response_format=ValidatorSynthesizerResponse,
     name="ValidatorSynthesizerAgent"

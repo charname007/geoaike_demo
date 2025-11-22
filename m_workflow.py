@@ -266,11 +266,11 @@ async def text2imager(state: OutputState) -> OutputState:
     map_data = getattr(final_results, 'map_data', None)
     if not map_data or not hasattr(map_data, 'features'):
         raise ValueError("map_data with features is required for text2imager.")
-    
+    theme= final_results.theme if hasattr(final_results, 'theme') else "地理特征"
     features = list(map_data.features)
     
     # 在当前事件循环中运行异步代码
-    await process_features_async(features)
+    await process_features_async(features, theme)
     
     return {"final_results": final_results}
 
@@ -305,7 +305,7 @@ if __name__ == "__main__":
         "user_prompt": "请帮我创建一张展示李白人生足迹的地图，要求从历史记录，李白创作的诗歌中寻找。"
     }
 
-    result = m_graph.invoke(test_input)
+    result =  m_graph.ainvoke(test_input)
     logger.info(f"Final Output: {result}")
     # 仅流式传输消息变化
     # for event in graph.stream(test_input):
