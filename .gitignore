@@ -13,3 +13,5 @@ venv/
 .idea/
 .DS_Store
 *.egg-info/
+~$Doc1.docx
+Doc1.docx

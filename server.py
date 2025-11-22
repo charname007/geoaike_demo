@@ -161,3 +161,5 @@ if __name__ == "__main__":
     )
     logger.info(
         "Server started at http://{}:{}".format(SERVER_CONFIG['host'], SERVER_CONFIG['port']))
+    logger.info("访问地图页面：http://{}:{}/Map_Page".format(
+        SERVER_CONFIG['host'], SERVER_CONFIG['port']))
