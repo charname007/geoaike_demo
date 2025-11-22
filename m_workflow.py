@@ -276,7 +276,7 @@ async def text2imager(state: OutputState) -> OutputState:
 
 workflow = StateGraph(AgentState, input_schema=InputState,
                       output_schema=OutputState)
-workflow.add_node("Orchestrator", orchestrator_node)
+workflow.add_node("Orchestrator", action=orchestrator_node)
 workflow.add_node(
     "ValidatorSynthesizer", validator_synthesizer_node)
 for researcher_name, researcher_agent in researchers.items():
